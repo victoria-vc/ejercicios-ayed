@@ -14,9 +14,15 @@ int sumar(int a, int b);
 void mostrar_fecha_separada(int fecha);
 
 // Ejercicio 6
-
 void verificar_edad(int edad);
 
+// Ejercicio 9
+struct infraccion{
+    int tipo; // 1,2,3,4
+    string motivo;
+    int valor; // $$
+    char gravedad; // 'L' 'M' 'G'
+};
 
 
 
