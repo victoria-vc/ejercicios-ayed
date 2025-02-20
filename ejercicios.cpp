@@ -33,3 +33,22 @@ void verificar_edad(int edad){
     
 }
 
+// Ejercicio 12 (forma 1)
+void calcular_edad(persona personas[], int cant){
+    int fechaMin = 20250219;
+    char nombreFMin[10];
+    int fechaMax = 1;
+    char nombreFMax[10];
+    for(int i=0; i<cant; i++){
+        if(personas[i].fecha_nacimiento < fechaMin){
+            fechaMin = personas[i].fecha_nacimiento;
+            strcpy(nombreFMin, personas[i].nombre);
+        }
+        if(personas[i].fecha_nacimiento > fechaMax){
+            fechaMax = personas[i].fecha_nacimiento;
+            strcpy(nombreFMax, personas[i].nombre);
+        }
+    }
+    cout << "La persona más vieja es: " << nombreFMin << " ya que nació en la fecha " << fechaMin << endl;
+    cout << "La persona más joven es: " << nombreFMax << " ya que nació en la fecha " << fechaMax << endl;
+}

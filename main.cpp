@@ -195,7 +195,16 @@ cout << "El mayor número ingresado es: " << valor_mayor << " en la posición: "
 cout << "El menor número ingresado es: " << valor_menor << " en la posición: " << posicionMenor << endl;
 
 
-cout << "Ejercicio 12: " << endl;
+cout << "Ejercicio 12 (forma 1): " << endl;
+
+persona personas[4] = {{"Tomas", 20040218},{"Marta", 19400302},
+                      {"Violeta", 20040119},{"Paula",20010409}};
+calcular_edad(personas, 4);
+
+cout << "Ejercicio 12 (forma 2): " << endl;
+
+
+
 return 0;
 
 

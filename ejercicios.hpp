@@ -24,7 +24,13 @@ struct infraccion{
     char gravedad; // 'L' 'M' 'G'
 };
 
+// Ejercicio 12
+struct persona {
+    char nombre[10];
+    int fecha_nacimiento; // AAAAMMDD
+};
 
+void calcular_edad(persona personas[], int cant);
 
 
 
