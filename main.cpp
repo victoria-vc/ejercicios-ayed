@@ -333,6 +333,46 @@ string tendencia_pantalla;
 tendencia_pantalla = Tendencia(AA, BB);
 cout << tendencia_pantalla << endl;
 
+cout << "Ejercicio 17: " << endl;
+
+cout << "Ingrese un número mayor a 0 y menor a 30" << endl; // no hacemos validaciones para simplificar
+int numerete;
+cin >> numerete;
+
+int VEC[numerete];
+
+for(int i=0; i<numerete; i++){
+    VEC[i] = (i + 1) * 2;
+    cout << VEC[i] << endl;
+}
+
+cout << "Ejercicio 18: " << endl;
+
+int N;
+cout << "Ingresar valor entero (<30): ";
+cin >> N;
+
+int elementos[30];
+cout << "Ingresa" << N << "elementos: " << endl;
+for(int i=0; i<N; i++){
+    cin >> elementos[i];
+}
+
+int ultimo_elemento = elementos[N-1];
+
+if(ultimo_elemento < 10){
+    cout << "Elementos negativos: " << endl;
+    for(int i=0; i<N; i++){
+        if(elementos[i] < 0){
+            cout << elementos[i] << "  " << endl;
+        }
+    }
+} else { 
+    cout << "Demás elementos: " << endl;
+    for(int i=0; i<N-1; i++){
+        cout << elementos[i] << " " << endl;
+    }
+}
 return 0;
 
 }

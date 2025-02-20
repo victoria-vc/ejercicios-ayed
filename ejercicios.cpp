@@ -75,8 +75,6 @@ string Tendencia(int AA, int BB){
         return estable;
     } else {
         return en_ascenso;
-    }
-
-    
+    }   
 }
 
