@@ -53,5 +53,4 @@ Resto -> En ascenso
     	-Informe el producto de los elementos impares que ocupen posición par.  
 20. Dado un número N (<25), y dos vectores A y B de N elementos que contenga números reales:  
     	-Genere e informe un tercer vector C intercalando los valores de posición impar de A y los valores de posición par de B.  
-    	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si 
-  	no lo son.  
+    	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si no lo son.  
