@@ -34,7 +34,7 @@ void verificar_edad(int edad){
 }
 
 // Ejercicio 12 (forma 1)
-void calcular_edad(persona personas[], int cant){
+void calcular_edad(persona1 personas[], int cant){
     int fechaMin = 20250219;
     char nombreFMin[10];
     int fechaMax = 1;

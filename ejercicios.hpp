@@ -24,13 +24,26 @@ struct infraccion{
     char gravedad; // 'L' 'M' 'G'
 };
 
-// Ejercicio 12
-struct persona {
+// Ejercicio 12 (forma 1)
+struct persona1{
     char nombre[10];
     int fecha_nacimiento; // AAAAMMDD
 };
 
-void calcular_edad(persona personas[], int cant);
+void calcular_edad(persona1 personas[], int cant);
+
+// Ejercicio 12 (forma2)
+struct persona2{
+    char nombre[40];
+    char fecha_nacimiento[9]; // AAAAMMDD
+};
+
+// Ejercicio 14
+struct contenedor{
+    int id;
+    int peso;
+    int puerto; // 1,2,3
+};
 
 
 

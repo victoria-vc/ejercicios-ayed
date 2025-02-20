@@ -197,16 +197,126 @@ cout << "El menor número ingresado es: " << valor_menor << " en la posición: "
 
 cout << "Ejercicio 12 (forma 1): " << endl;
 
-persona personas[4] = {{"Tomas", 20040218},{"Marta", 19400302},
+persona1 personas[4] = {{"Tomas", 20040218},{"Marta", 19400302},
                       {"Violeta", 20040119},{"Paula",20010409}};
 calcular_edad(personas, 4);
 
 cout << "Ejercicio 12 (forma 2): " << endl;
 
+persona2 personaas[100];
+int indice = 0;
 
+while(true){
+    cout << "Ingrese el nombre (o FIN para terminar): ";
+    cin >> personaas[indice].nombre;
+    if(strcmp(personaas[indice].nombre, "FIN") == 0){
+        break;
+    }
 
+    cout << "Ingrese la fecha de nacimiento (AAAAMMDD): ";
+    cin >> personaas[indice].fecha_nacimiento;
+    indice++;
+}
+
+     if(indice == 0){
+        cout << "No se ingreso nada"<< endl;
+    } 
+
+    persona2 mayor = personaas[0];
+    persona2 menor = personaas[0];
+
+    for(int i=1; i<indice; i++){
+        if(strcmp(personaas[i].fecha_nacimiento, mayor.fecha_nacimiento) < 0){
+            mayor = personaas[i];
+        }
+        if(strcmp(personaas[i].fecha_nacimiento, menor.fecha_nacimiento) > 0){
+            menor = personaas[i];
+        }
+    }
+
+    cout << "La persona con mayor edad es: " << mayor.nombre << " nacida en la fecha " << mayor.fecha_nacimiento << endl;
+    cout << "La persona con menor edad es: " << menor.nombre << " nacida en la fecha " << menor.fecha_nacimiento << endl;
+
+cout << "Ejercicio 13: " << endl;
+
+int vec_numeros[100];
+int num;
+int num_mayor_neg = -99999999; 
+int num_menor_pos = 99999999; 
+int cantidad_nums = 0;
+float suma_nums = 0;
+float promedio;
+float num_min_rango = 99999999;
+
+    for(int i = 0; i < 100; i++) {
+        cout << "Ingrese un numero: ";
+        cin >> num;
+        if(num == 0) {
+            break;
+        }
+        vec_numeros[i] = num;
+        suma_nums += vec_numeros[i];
+        cantidad_nums++;
+
+        if(num < 0 && num > num_mayor_neg) {
+            num_mayor_neg = num;
+        }
+
+        if(num > 0 && num < num_menor_pos) {
+            num_menor_pos = num;
+        }
+
+        if(num >= -17.3 && num <= 26.9 && num < num_min_rango) {
+            num_min_rango = num;
+        }
+    }
+
+    if(cantidad_nums > 0) {
+        promedio = suma_nums / cantidad_nums;
+
+        cout << "El número máximo negativo es: " << num_mayor_neg << endl;
+        cout << "El número mínimo positivo es: " << num_menor_pos << endl;
+        if(num_min_rango != 99999999) {
+            cout << "El número mínimo dentro del rango -17.3 y 26.9 es: " << num_min_rango << endl;
+        } else {
+            cout << "No hay números dentro del rango -17.3 y 26.9" << endl;
+        }
+        cout << "El promedio de todos los números es: " << promedio << endl;
+    } else {
+        cout << "No se ingresaron números válidos." << endl;
+    }
+
+    cout << "Ejercicio 14: " << endl;
+
+    contenedor contenedores[100] = {{1000,600,1},{1001,800,3},{1002,260,2},{1003,440,1}};
+    int peso_total = 0;
+    int mayor_peso = 0;
+    int id_mayor_peso;
+    int cantidad_puerto1 = 0;
+    int cantidad_puerto2 = 0;
+    int cantidad_puerto3 = 0;
+
+    for(int i=0; i<4; i++){ 
+        peso_total += contenedores[i].peso;
+        if(contenedores[i].puerto == 1){
+            cantidad_puerto1++;
+        } else if(contenedores[i].puerto == 2) {
+            cantidad_puerto2++;
+        } else if(contenedores[i].puerto == 3){
+            cantidad_puerto3++;
+        }
+        if(contenedores[i].peso > mayor_peso){
+            mayor_peso = contenedores[i].peso;
+            id_mayor_peso = contenedores[i].id;
+        }
+        
+    }
+    cout << "El peso total del buque es " << peso_total << "kg" << endl;
+    cout << "El contenedor con más peso es el de ID " << id_mayor_peso << endl;
+    cout <<"La cantidad de buques al puerto 1 son " << cantidad_puerto1 << endl;
+    cout <<"La cantidad de buques al puerto 2 son " << cantidad_puerto2 << endl;
+    cout <<"La cantidad de buques al puerto 3 son " << cantidad_puerto3 << endl;
 return 0;
-
 
 }
 
