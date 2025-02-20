@@ -46,3 +46,12 @@ B - A < 0 -> Decreciente
 B - A < 5% de A -> Leve ascenso  
 B - A < 2% de A -> Estable  
 Resto -> En ascenso  
+17. Dado un número N (<30), genere e informe un vector VEC de N elementos que contenga los primeros N números naturales pares.  
+18. Ingresar un valor entero N (<30) y a continuación un conjunto de N elementos. Si el último elemento del conjunto tiene un valor menor que 10 imprimir los negativos y en caso contrario los demás.  
+19. Dado un conjunto (<100) de valores enteros de los cuales el último es cero y no debe procesarse:  
+    	-Informe el valor mínimo, su posición dentro del conjunto, si el mínimo no es único, informar todas las posiciones donde se encuentre.  
+    	-Informe el producto de los elementos impares que ocupen posición par.  
+20. Dado un número N (<25), y dos vectores A y B de N elementos que contenga números reales:  
+    	-Genere e informe un tercer vector C intercalando los valores de posición impar de A y los valores de posición par de B.  
+    	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si 
+  	no lo son.  
