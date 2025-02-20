@@ -45,6 +45,12 @@ struct contenedor{
     int puerto; // 1,2,3
 };
 
+// Ejercicio 15
+float calcularPorcentajeDiferencia(int A, int B);
+
+// Ejercicio 16
+string Tendencia(int AA, int BB);
+
 
 
 

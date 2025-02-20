@@ -52,3 +52,31 @@ void calcular_edad(persona1 personas[], int cant){
     cout << "La persona más vieja es: " << nombreFMin << " ya que nació en la fecha " << fechaMin << endl;
     cout << "La persona más joven es: " << nombreFMax << " ya que nació en la fecha " << fechaMax << endl;
 }
+
+// Ejercicio 15  
+float calcularPorcentajeDiferencia(int A, int B){
+    float resultado;
+    resultado = (((B - A) * 100.0) / (A + B)); // se pone 100.0 para asegurar el cálculo en float
+    return resultado;
+}
+
+// Ejercicio 16
+string Tendencia(int AA, int BB){
+    string decreciente = "Decreciente";
+    string leve_ascenso = "Leve ascenso";
+    string estable = "Estable";
+    string en_ascenso = "En ascenso";
+
+    if((BB - AA) < 0){
+        return decreciente;
+    } else if((BB - AA) < AA * 0.05){
+        return leve_ascenso;
+    } else if((BB - AA) < AA * 0.02){
+        return estable;
+    } else {
+        return en_ascenso;
+    }
+
+    
+}
+

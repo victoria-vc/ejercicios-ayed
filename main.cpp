@@ -316,6 +316,23 @@ float num_min_rango = 99999999;
     cout <<"La cantidad de buques al puerto 1 son " << cantidad_puerto1 << endl;
     cout <<"La cantidad de buques al puerto 2 son " << cantidad_puerto2 << endl;
     cout <<"La cantidad de buques al puerto 3 son " << cantidad_puerto3 << endl;
+
+cout << "Ejercicio 15: " << endl;
+int A = 2;
+int B = 4;
+float result;
+
+result = calcularPorcentajeDiferencia(A, B); 
+cout << result << endl;
+
+cout << "Ejercicio 16: " << endl;
+int AA = 400;
+int BB = 2;
+
+string tendencia_pantalla;
+tendencia_pantalla = Tendencia(AA, BB);
+cout << tendencia_pantalla << endl;
+
 return 0;
 
 }
