@@ -159,6 +159,30 @@ for(int i = 0; i < 4; i++){
      << cantidad_horas_localidad[i] << ", Unidades de multa: " << unidades_multa[i] << endl;
 }
 
+cout << "Ejercicio 5 (de parcial): " << endl;
+
+FILE* f = NULL;
+matriz mat[15][31] = {};
+
+// llenamos de ejemplo:
+archivo ejemplos[] = {
+    {1, 1, "Gasto A", 100.0},
+    {1, 2, "Gasto B", 200.0},
+    {2, 1, "Gasto C", 150.0},
+    {2, 3, "Gasto D", 300.0},
+    {3, 1, "Gasto E", 250.0},
+    {3, 2, "Gasto F", 350.0},
+    {4, 1, "Gasto G", 400.0},
+    {4, 2, "Gasto H", 500.0}
+};
+
+
+
+int cantidad = sizeof(ejemplos) / sizeof(ejemplos[0]);
+
+cargarEstructura(f, mat, ejemplos, cantidad);
+mostrarGastos(mat);
+mayorGasto(mat);
 return 0;
 
 }

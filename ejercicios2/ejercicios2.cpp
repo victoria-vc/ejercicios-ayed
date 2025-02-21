@@ -190,7 +190,7 @@ Nodo* insertarAlFinal(Nodo*& l, int x){
     return nuevo;
 }
 
-// Ejercicio 2
+// Ejercicio 2 (de parcial)
 void inicializar_comunas(Comuna comunas[], int size){
     for(int i=0; i<size; i++){
         comunas[i].total_envios = 0;
@@ -273,4 +273,69 @@ char insertarEnTerceraPosicion(Nodo*& pila, int valor){
     }
 
     return 'S';
+}
+
+// Ejercicio 5 (de parcial)
+void cargarEstructura(FILE* f, matriz mat[][31], archivo ejemplos[], int cantidad){
+	for(int k=0; k<cantidad; k++){
+		insertarOrdenado(mat[ejemplos[k].num_sector - 1][ejemplos[k].dia - 1].lista, ejemplos[k]);
+	}
+}
+
+void mostrarGastos(matriz mat[][31]){
+	for(int i=0; i<15; i++){
+		cout << "SECTOR " << i+1 << ": " << endl;
+		for(int j=0; j<31; j++){
+			cout << "DIA " << j+1 << ": " << endl;
+			nodo* aux = mat[i][j].lista;
+			while(aux != NULL){
+				cout << "Detalle: " << aux->info.detalle << endl;
+				cout << "Importe: " << aux->info.importe << endl;
+				aux = aux->sig;
+			}
+		}
+	}
+}
+void mayorGasto(matriz mat[][31]){
+	int sector_mayor = 0;
+	int dia_mayor = 0;
+	float mayor = 0;
+
+	for(int i=0; i<15; i++){
+		for(int j=0; j<31; j++){
+			nodo* aux = mat[i][j].lista;
+			while(aux != NULL){
+				if(aux->info.importe > mayor){
+					mayor = aux->info.importe;
+					sector_mayor = i + 1;
+					dia_mayor = j + 1;
+				}
+				aux = aux->sig;
+			}
+		}	
+	}
+	cout << "El mayor gasto se realizó en el sector " << sector_mayor << " en el día " << 
+	dia_mayor << " con un importe de " << mayor << endl;
+}
+
+nodo* insertarOrdenado(nodo*& lista, archivo arch){
+	nodo* nuevo = new nodo();
+	strcpy(nuevo->info.detalle, arch.detalle);
+	nuevo->info.importe = arch.importe;
+	nuevo->sig = NULL;
+
+	nodo* aux = lista;
+	nodo* ant = NULL;
+	while(aux != NULL && aux->info.importe > arch.importe){
+		ant = aux;
+		aux = aux->sig;
+	}
+	if(ant != NULL){
+		ant->sig = nuevo;
+	} else {
+		lista = nuevo;
+	}
+	nuevo->sig = aux;
+
+	return nuevo;
 }

@@ -96,9 +96,29 @@ Se solicita emitir un listado con los siguientes datos:
 -Total de horas de cortes  
 -Unidades de la multa  
 Se pide:  
- - Declarar todas las estructuras necesarias para resolver la impresión del listado (2 puntos). 
+ - Declarar todas las estructuras necesarias para resolver la impresión del listado (2 puntos)  
  - Imprimir el listado tal como se detalla arriba ordenado por MES y LOCALIDAD con el promedio de horas de corte para cada mes y calcular el importe de multa de localidad considerando que menos de 3 horas no se calculan, entre 3 y 6 se calculan a razón de 8 unidades de multa la hora, y más de 6 se calculan a razón de 12 unidades cada hora. Por ejemplo 3 horas de corten suman 24 unidades de multa y 8 horas sumarían 96.  
 Nota: para imprimir el listado debe resolver el problema desarrollando funciones con los parámetros que considere adecuados.  
 Puede utilizar funciones de biblioteca, siempre que respete las firmas que se enseñaron en clase.  
-Emitir listado con totales correctos (4 puntos).  
-Lógica adecuada para el cálculo de multas (4 puntos).  
+Emitir listado con totales correctos (4 puntos)    
+Lógica adecuada para el cálculo de multas (4 puntos)    
+5. Se quiere almacenar en memoria los gastos efectuados por cada uno de los 15 sectores de una empresa en un mes determinado para realizar un análisis estadístico.  
+Para ello se implementará una matriz de listas, donde las filas representan los sectores y las columnas los días y cada elemento es la lista con cada gasto de ese sector en ese día.  
+Los datos para armar la estructura se encuentran en el archivo de datos binario "Gastos.dat", donde cada registro representa un gasto efectuado y tiene:  
+		-Número de sector (de 1 a 15)  
+		-Día del mes (de 1 a 31)  
+		-Detalle  
+		-Importe gastado  
+El archivo no está ordenado y puede tener varios gastos realizados por un mismo sector.  
+- Función cargarEstructura debe generar la estructura en memoria con los datos del archivo, tener en cuenta que la estructura hay que realizarla en las otras funciones.  (2 puntos)  
+- Función mostrasGastos debe mostrar por pantalla el siguiente listado: (5 puntos)  
+Sector 1  
+	Día 1  
+		...  (detalle e importe de cada gasto)  
+		...  
+	Día 2
+		...  
+Sector 2  
+		...  
+Detalle e importe de cada gasto (ordenado de mayor a menor por importe) agrupado por sector y día.  
+- Función mayorGasto debe mostrar qué sector y qué día se realizó el mayor gasto (suponer único) (3 puntos)    

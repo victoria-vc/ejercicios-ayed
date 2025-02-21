@@ -11,42 +11,6 @@ struct Nodo{
 	Nodo* sig;
 };
 
-/* Ejercicio de parcial 1
-
-struct Nodo{
-    int legajo; // legajo porque es un solo campo
-    Nodo* sig;
-};
-
-struct registro{
-    int regional;
-    int carrera;
-    int legajo;
-};
-
-struct tMatriz{
-    int cantidad;
-    Nodo* lista;
-}; */
-
-// Ejercicio 3
-char insertarEnTerceraPosicion(Nodo*& pila, int valor);
-
-// Ejercicio 4 (de parcial)
-struct Registro{ // para el archivo "cortes.dat"
-    int inicio_corte; // hhmm
-    int final_corte; // hhmm
-    int id_subestacion;
-    int dia;
-    int mes;
-    int id_localidad;
-};
-
-struct Localidad{
-    int id_localidad;
-    char nombre_localidad[14];
-    int cantidad_habitantes;
-};
 
 //listas
 void agregarNodo(Nodo*& lista, int x);
@@ -69,8 +33,24 @@ int pop(Nodo*& pila);
 void encolar(Nodo*& colafte, Nodo*& colafin, int v);
 int desencolar(Nodo*& colafte, Nodo*& colafin);
 
-// Ejercicio de parcial 2
+/* Ejercicio 1 (de parcial)
+struct Nodo{
+    int legajo; // legajo porque es un solo campo
+    Nodo* sig;
+};
 
+struct registro{
+    int regional;
+    int carrera;
+    int legajo;
+};
+
+struct tMatriz{
+    int cantidad;
+    Nodo* lista;
+}; */
+
+// Ejercicio 2 (de parcial)
 struct Pedido{
     char direccion[100+1];
     char dni[12];
@@ -93,6 +73,52 @@ void agregar_envio(Comuna comunas[], Pedido pedido, int numero_comuna);
 bool quitarPrimero(NodoLista*& lista, Pedido& p);
 void vaciar_listas(Comuna comunas[], int size, const char* nombre_archivo);
 
+// Ejercicio 3
+char insertarEnTerceraPosicion(Nodo*& pila, int valor);
+
+// Ejercicio 4 (de parcial)
+struct Registro{ // para el archivo "cortes.dat"
+    int inicio_corte; // hhmm
+    int final_corte; // hhmm
+    int id_subestacion;
+    int dia;
+    int mes;
+    int id_localidad;
+};
+
+struct Localidad{
+    int id_localidad;
+    char nombre_localidad[14];
+    int cantidad_habitantes;
+};
+
+// Ejercicio 5 (de parcial)
+struct archivo{
+    int num_sector;
+    int dia;
+    char detalle[31];
+    float importe;
+};
+
+struct info_lista{
+    char detalle[31];
+    float importe;
+};
+
+struct nodo{
+    info_lista info;
+    nodo* sig;
+};
+
+struct matriz{
+    int mayor_gasto;
+    nodo* lista;
+};
+
+void cargarEstructura(FILE* f, matriz mat[][31], archivo ejemplos[], int cantidad);
+void mostrarGastos(matriz[][31]);
+nodo* insertarOrdenado(nodo*&, archivo);
+void mayorGasto(matriz mat[][31]);
 
 
 #endif
