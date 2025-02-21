@@ -190,7 +190,7 @@ Nodo* insertarAlFinal(Nodo*& l, int x){
     return nuevo;
 }
 
-// Ejercicio de parcial 2
+// Ejercicio 2
 void inicializar_comunas(Comuna comunas[], int size){
     for(int i=0; i<size; i++){
         comunas[i].total_envios = 0;
@@ -243,4 +243,34 @@ void vaciar_listas(Comuna comunas[], int size, const char* nombre_archivo){
     }
     fclose(archivo);
 }
-    
+
+// Ejercicio 3
+char insertarEnTerceraPosicion(Nodo*& pila, int valor){
+    Nodo* tempPila = NULL;
+    int counter = 0;
+
+    // Sacar elementos hasta alcanzar la tercera posición o hasta que la pila esté vacía
+    while (pila != NULL && counter < 2) {
+        push(tempPila, pop(pila));
+        counter++;
+    }
+
+    if (counter < 2) {
+        // No hay suficientes elementos en la pila
+        // Restaurar la pila original
+        while (tempPila != NULL) {
+            push(pila, pop(tempPila));
+        }
+        return 'N';
+    }
+
+    // Insertar el nuevo valor en la pila original
+    push(pila, valor);
+
+    // Restaurar los elementos guardados en la pila temporal
+    while (tempPila != NULL) {
+        push(pila, pop(tempPila));
+    }
+
+    return 'S';
+}

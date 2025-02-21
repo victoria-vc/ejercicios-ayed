@@ -29,6 +29,9 @@ struct tMatriz{
     Nodo* lista;
 }; */
 
+// Ejercicio 3
+char insertarEnTerceraPosicion(Nodo*& pila, int valor);
+
 //listas
 void agregarNodo(Nodo*& lista, int x);
 void mostrar(Nodo* lista);

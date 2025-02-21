@@ -2,7 +2,7 @@
 
 int main(){
 
-cout << "Ejercicio de parcial 1: " << endl; 
+cout << "Ejercicio 1 (comentado): " << endl; 
     // Comentado porque no está terminado
 
     /* int i, j, legajo;
@@ -51,7 +51,7 @@ cout << "Ejercicio de parcial 1: " << endl;
         }
     } */
 
-cout << "Ejercicio de parcial 2: " << endl; 
+cout << "Ejercicio 2 (no muestra nada): " << endl; 
 
     Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
 
@@ -71,5 +71,16 @@ cout << "Ejercicio de parcial 2: " << endl;
     // vaciamos listas y escribimos en el archivo
     vaciar_listas(vec, 15, "envios.txt");
     return 0;
+
+cout << "Ejercicio 3: " << endl;
     
+    Nodo* pila = NULL;
+    push(pila, 4);
+    push(pila, 10);
+    push(pila, 12);
+    push(pila, 8);
+
+    cout << pop(pila) << endl;
+    char resultado = insertarEnTerceraPosicion(pila, 2000);
+
 }

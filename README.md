@@ -76,3 +76,4 @@ Luego del proceso, las listas de las comunas en cuestión deben quedar vacías. 
 	bool quitarPrimero(NodoListaSE *&lista, Pedido &p)  
   
 	Que quita el primer nodo de la lista, asignando al segundo como primero si hubiera más nodos o dejando la   lista en NULL si se quitara el último nodo. En caso que se haya podido quitar un nodo devuelve true y los   datos de la info del nodo a través del parámetro p. En caso de que no se haya podido quitar un nodo, la   función devuelve false. (4 puntos)  
+3. Dada una pila y un valor X colocar el valor X en la tercera posicion de la pila, retornando un parámetro con valor 'S' o 'N' según haya sido exitoso o no el requerimiento. (Definir parámetros y codificar).  
