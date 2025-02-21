@@ -70,17 +70,21 @@ cout << "Ejercicio 2 (no muestra nada): " << endl;
 
     // vaciamos listas y escribimos en el archivo
     vaciar_listas(vec, 15, "envios.txt");
-    return 0;
-
-cout << "Ejercicio 3: " << endl;
+    
+    cout << "Ejercicio 3: " << endl;
     
     Nodo* pila = NULL;
+
     push(pila, 4);
     push(pila, 10);
     push(pila, 12);
     push(pila, 8);
-
+    
     cout << pop(pila) << endl;
-    char resultado = insertarEnTerceraPosicion(pila, 2000);
+    
+/*     char resultado = insertarEnTerceraPosicion(pila, 2000);
+    cout << resultado << endl;
+    cout << pop(pila) << endl; */
 
+   return 0;
 }
