@@ -1,5 +1,5 @@
-#ifndef PARCIAL_H
-#define PARCIAL_H
+#ifndef EJERCICIOS2_H
+#define EJERCICIOS2_H
 
 #include <iostream>
 #include <cstring>
@@ -32,15 +32,17 @@ struct tMatriz{
 //listas
 void agregarNodo(Nodo*& lista, int x);
 void mostrar(Nodo* lista);
+void mostrar_eliminandoNodo(Nodo* lista);
 void liberar(Nodo*& lista);
 Nodo* buscar(Nodo* lista, int v);
-void eliminar(Nodo*& lista, int v);
+void eliminarNodo(Nodo*& lista, int v);
 int eliminarPrimerNodo(Nodo*& lista);
 Nodo* insertarOrdenado(Nodo*& lista, int v);
 void ordenar(Nodo*& lista);
 Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
 Nodo* insertaPrimero(Nodo*& l, int x);
 Nodo* insertarAlFinal(Nodo*& l, int x);
+Nodo* insertarSinRepetir(Nodo*& lista, int v);
 //pilas
 void push(Nodo*& pila, int valor);
 int pop(Nodo*& pila);

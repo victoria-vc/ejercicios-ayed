@@ -1,4 +1,4 @@
-#include "parcial.hpp"
+#include "ejercicios2.hpp"
 
 int main(){
 

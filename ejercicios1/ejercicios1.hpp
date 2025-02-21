@@ -1,5 +1,5 @@
-#ifndef EJERCICIOS_H
-#define EJERCICIOS_H
+#ifndef EJERCICIOS1_H
+#define EJERCICIOS1_H
 
 #include <iostream>
 #include <cstring>

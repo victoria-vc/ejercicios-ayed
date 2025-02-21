@@ -1,4 +1,5 @@
-#include "parcial.hpp"
+#include "ejercicios2.hpp"
+
 void agregarNodo(Nodo*& lista, int x){
 	
 	Nodo* nuevo = new Nodo();
@@ -25,14 +26,19 @@ void mostrar(Nodo* lista){
 	 }
 }
 
+void mostrar_eliminandoNodo(Nodo* lista){
+	while(lista){
+		cout << pop(lista);
+	}
+	return;
+}
+
 
 void liberar(Nodo*& lista){
-	Nodo* aux;
-	while(lista != NULL){
-		aux = lista;
-		lista = lista->sig;
-		delete aux;
+	while(lista){
+		pop(lista);
 	}
+	return;
 }
 
 Nodo* buscar(Nodo* lista, int v){
@@ -45,7 +51,7 @@ Nodo* buscar(Nodo* lista, int v){
 	return aux;
 }
 
-void eliminar(Nodo*& lista, int v){
+void eliminarNodo(Nodo*& lista, int v){
 	Nodo* aux = lista;
 	Nodo* ant = NULL;
 	while(aux != NULL && aux->info != v){
@@ -108,6 +114,14 @@ Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
 		nodoBuscado = insertarOrdenado(lista,v);
 	}
 	return nodoBuscado;
+}
+
+Nodo* insertarSinRepetir(Nodo*& lista, int v){
+	Nodo* x = buscar(lista, v);
+	if(x == NULL){
+		x= insertarOrdenado(lista, v);
+	}
+	return x;
 }
 
 //pilas

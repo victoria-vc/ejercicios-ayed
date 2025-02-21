@@ -1,4 +1,4 @@
-#include "ejercicios.hpp"
+#include "ejercicios1.hpp"
 
 // Ejercicio 1
 int sumar(int a, int b){

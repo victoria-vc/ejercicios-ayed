@@ -1,4 +1,4 @@
-## Ejercicios del aula virtual - Curso de verano 2025   
+## Ejercicios del aula virtual - Curso de verano 2025 (PARTE 1)  
 1. Dados dos valores enteros A y B, informar: la suma, la resta y el producto.  
 2. Dado un número entero de la forma (AAAAMMDD), que representa una fecha válida: mostrar el día, mes y año.  
 3. Realizar la suma de todos los números pares entre 2 y 10000.  
@@ -56,7 +56,7 @@ Resto -> En ascenso
     	-Genere e informe un tercer vector C intercalando los valores de posición impar de A y los valores de posición par de B.  
     	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si no lo son.  
 
-## Ejercicios tipo parcial  
+## Ejercicios del aula virtual - Curso de verano 2025 (PARTE 2)    
 1. Dadas 20 regionales y 10 carreras de la UTN, y un archivo con los legajos de los alumnos de todas las facultades con los siguientes datos:  
 		-ID regional (numéricos de 1 a 20)  
 		-ID carrera (numéricos de 1 a 10)  
