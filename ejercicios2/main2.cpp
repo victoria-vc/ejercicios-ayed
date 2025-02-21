@@ -53,7 +53,7 @@ cout << "Ejercicio 1 (comentado): " << endl;
 
 cout << "Ejercicio 2 (de parcial): " << endl;
 
-    Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
+   /*  Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
 
     inicializar_comunas(vec, 15);
 
@@ -86,7 +86,7 @@ cout << "Ejercicio 2 (de parcial): " << endl;
     while(pila != NULL){
         cout << pop(pila) << endl;
         }
-
+ */
 cout << "Ejercicio 4 (de parcial): " << endl;
 // se solicita emitir un listado con:
 // mes, cantidad de hora promedio de corte por mes, localidad (nombre),
@@ -130,20 +130,35 @@ reg[3].id_localidad = 16;
 
 fwrite(&reg, sizeof(Registro), 4, cortes);
 
-int cantidad_horas_localidad = 0;
-int cantidad_horas_total = 0;
-int unidades_multa = 0;
+int cantidad_horas_localidad[4] = {0}; // asumimos 4 localidades
+int cantidad_horas_mes[12] = {0};
+int unidades_multa[4] = {0};
 
 for(int i=0; i<4; i++){
-    cantidad_horas_localidad += (reg[i].final_corte - reg[i].inicio_corte);
-    if(cantidad_horas_localidad < 3){
-        break;
-    } else if(cantidad_horas_localidad > 3 && cantidad_horas_localidad < 6){
-        unidades_multa = cantidad_horas_localidad * 8;
-    } else if(cantidad_horas_localidad > 6){
-        unidades_multa = cantidad_horas_localidad * 12;
+    int horas_corte = reg[i].final_corte - reg[i].inicio_corte;
+    cantidad_horas_localidad[i] += horas_corte;
+    cantidad_horas_mes[reg[i].mes -1] += horas_corte;
+
+    if(horas_corte < 3){
+        continue; // no se plica la multa
+    } else if(horas_corte >= 3 && horas_corte < 6){
+        unidades_multa[i] += horas_corte * 8;
+    } else if(horas_corte >= 6){
+        unidades_multa[i] += horas_corte * 12;
     }
 }
 
-   return 0;
+for(int mes = 0; mes < 12; mes++){
+    if(cantidad_horas_mes[mes] > 0){
+        cout << "Mes: " << mes + 1 << ", Promedio de horas de corte: " << cantidad_horas_mes[mes] / 4.0 << endl;
+    }
+}
+
+for(int i = 0; i < 4; i++){
+    cout << "Localidad: " << localidades[i].nombre_localidad << ", Total de horas de cortes: "
+     << cantidad_horas_localidad[i] << ", Unidades de multa: " << unidades_multa[i] << endl;
+}
+
+return 0;
+
 }
