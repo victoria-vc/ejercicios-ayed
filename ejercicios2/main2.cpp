@@ -88,7 +88,62 @@ cout << "Ejercicio 2 (de parcial): " << endl;
         }
 
 cout << "Ejercicio 4 (de parcial): " << endl;
+// se solicita emitir un listado con:
+// mes, cantidad de hora promedio de corte por mes, localidad (nombre),
+// total de horas de corte, unidades de multa
 
+Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
+                            {14, "Arroyo Dulce", 6000},{16, "Arrecifes", 20000}}; // lo que "tenemos de datos"
+Registro reg[10]; // lo que "llega"
+
+FILE* cortes = fopen("cortes.dat", "wb+"); // lo vamos a escribir, pero en el parcial ya estaría con leerlo
+
+reg[0].inicio_corte = 1202;
+reg[0].final_corte = 1404;
+reg[0].id_subestacion = 2;
+reg[0].dia = 02;
+reg[0].mes = 04;
+reg[0].id_localidad = 10;
+
+reg[1].inicio_corte = 1900;
+reg[1].final_corte = 2030;
+reg[1].id_subestacion = 4;
+reg[1].dia = 10;
+reg[1].mes = 10;
+reg[1].id_localidad = 12;
+
+reg[2].inicio_corte = 1000;
+reg[2].final_corte = 1200;
+reg[2].id_subestacion = 8;
+reg[2].dia = 20;
+reg[2].mes = 11;
+reg[2].id_localidad = 14;
+
+reg[3].inicio_corte = 2200;
+reg[3].final_corte = 2340;
+reg[3].id_subestacion = 10;
+reg[3].dia = 28;
+reg[3].mes = 12;
+reg[3].id_localidad = 16;
+
+// también lo podríamos haber llenado como arreglo vec[10] = {{...},{...}};
+
+fwrite(&reg, sizeof(Registro), 4, cortes);
+
+int cantidad_horas_localidad = 0;
+int cantidad_horas_total = 0;
+int unidades_multa = 0;
+
+for(int i=0; i<4; i++){
+    cantidad_horas_localidad += (reg[i].final_corte - reg[i].inicio_corte);
+    if(cantidad_horas_localidad < 3){
+        break;
+    } else if(cantidad_horas_localidad > 3 && cantidad_horas_localidad < 6){
+        unidades_multa = cantidad_horas_localidad * 8;
+    } else if(cantidad_horas_localidad > 6){
+        unidades_multa = cantidad_horas_localidad * 12;
+    }
+}
 
    return 0;
 }

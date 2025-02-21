@@ -96,7 +96,7 @@ Se solicita emitir un listado con los siguientes datos:
 -Total de horas de cortes  
 -Unidades de la multa  
 Se pide:  
- -Declarar todas las estructuras necesarias para resolver la impresión del listado (2 puntos). 
+ - Declarar todas las estructuras necesarias para resolver la impresión del listado (2 puntos). 
  - Imprimir el listado tal como se detalla arriba ordenado por MES y LOCALIDAD con el promedio de horas de corte para cada mes y calcular el importe de multa de localidad considerando que menos de 3 horas no se calculan, entre 3 y 6 se calculan a razón de 8 unidades de multa la hora, y más de 6 se calculan a razón de 12 unidades cada hora. Por ejemplo 3 horas de corten suman 24 unidades de multa y 8 horas sumarían 96.  
 Nota: para imprimir el listado debe resolver el problema desarrollando funciones con los parámetros que considere adecuados.  
 Puede utilizar funciones de biblioteca, siempre que respete las firmas que se enseñaron en clase.  

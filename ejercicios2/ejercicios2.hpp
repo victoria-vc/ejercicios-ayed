@@ -32,6 +32,22 @@ struct tMatriz{
 // Ejercicio 3
 char insertarEnTerceraPosicion(Nodo*& pila, int valor);
 
+// Ejercicio 4 (de parcial)
+struct Registro{ // para el archivo "cortes.dat"
+    int inicio_corte; // hhmm
+    int final_corte; // hhmm
+    int id_subestacion;
+    int dia;
+    int mes;
+    int id_localidad;
+};
+
+struct Localidad{
+    int id_localidad;
+    char nombre_localidad[14];
+    int cantidad_habitantes;
+};
+
 //listas
 void agregarNodo(Nodo*& lista, int x);
 void mostrar(Nodo* lista);
