@@ -378,23 +378,44 @@ cout << "Ejercicio 18: " << endl;
 
 cout << "Ejercicio 19: " << endl;
 
+    int valores[100];
+    int elemento;
+    int valor_minimo = 99999999;
+    int posiciones_vm[100];
+    int contador_vm = 0;
+    long long producto_impares = 1;
+    bool hay_impares = false;
 
-int valores[100];
-int elemento;
-int valor_minimo = 99999999;
-int posicion_vm;
-cout << "Ingrese valores " << endl;
-for(int i=0; i<100; i++){
-    cin >> valores[i];
-    if(valores[i] == 0){
-        break;
+    cout << "Ingrese valores " << endl;
+    for(int i=0; i<100; i++){
+        cin >> valores[i];
+        if(valores[i] == 0){
+            break;
+        }
+        if(valores[i] < valor_minimo){
+            valor_minimo = valores[i];
+            contador_vm = 0;
+            posiciones_vm[contador_vm++] = i;;
+        }
+        if(i%2 == 0 && valores[i]%2 != 0){
+            producto_impares *= valores[i];
+            hay_impares = true;
+        }
     }
-    if(valores[i] < valor_minimo && valores[i] != 0){
-        valor_minimo = valores[i];
-        posicion_vm = i;
+    cout << "El valor minimo es " << valor_minimo << " en la/s posición/es:  " << posiciones_vm << endl;
+    for(int i=0; i<contador_vm; i++){
+        cout << posiciones_vm[i] << " ";
     }
-}
-cout << "El valor minimo es " << valor_minimo << " en la posición " << posicion_vm << endl;
+
+    if(hay_impares){
+        cout << "El producto de los elementos impares en posiciones pares es: " << producto_impares << endl;
+    } else {
+        cout << "No hay números pares en posiciones impares" << endl;
+    }
+
+    cout << "Ejercicio 20: " << endl;
+
+
 
 
 return 0;

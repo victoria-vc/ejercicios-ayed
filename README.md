@@ -1,3 +1,4 @@
+Ejercicios del aula virtual - Curso de verano 2025   
 1. Dados dos valores enteros A y B, informar: la suma, la resta y el producto.  
 2. Dado un número entero de la forma (AAAAMMDD), que representa una fecha válida: mostrar el día, mes y año.  
 3. Realizar la suma de todos los números pares entre 2 y 10000.  
@@ -54,3 +55,24 @@ Resto -> En ascenso
 20. Dado un número N (<25), y dos vectores A y B de N elementos que contenga números reales:  
     	-Genere e informe un tercer vector C intercalando los valores de posición impar de A y los valores de posición par de B.  
     	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si no lo son.  
+
+Ejercicios tipo parcial  
+1. Dadas 20 regionales y 10 carreras de la UTN, y un archivo con los legajos de los alumnos de todas las facultades con los siguientes datos:  
+		-ID regional (numéricos de 1 a 20)  
+		-ID carrera (numéricos de 1 a 10)  
+		-Número de legajo  
+Se solicita:  
+		-Un listado de los legajos ordenado por regional, carrera, legajo.  
+		-Un listado de los legajos ordenado por carrera, regional, legajo.  
+En ambos casos mostrar antes de listar la cantidad total de alumnos.  
+2. Un centro de distribución logístico de envíos de una plataforma de ventas online debe hacer su sistema para asignar los paquetes recibidos a los motoqueros que repartirán por las 15 distintas comunas de CABA que están  representadas por un vector. La posición 0 del vector corresponde a la comuna 1 y la 14 a la comuna 15. Cada comuna tiene, a lo sumo, dos motoqueros asignados. Considerando esta información, en cada posición hay:
+		-Un entero que tiene la cantidad total de envíos ya entregados (se debe inicializar en cero en la declaración)  
+		-Dos listas SE de envíos, cada una contiene los envíos que tiene cada motoquero asignado a la comuna y cada envío tiene: dirección de entrega (hasta 100 caracteres), DNI del destinatario (xx.xxx.xxx), palabra clave (hasta 15 caracteres). Ambas listas deben inicializarse vacías en la declaración.  
+	a. Declare el vector principal y todos los tipos de datos necesarios para que sea válida la declaración del mismo. (2 puntos)  
+	b. Confeccione un procedimiento que reciba el vector, un struct “pedido” y un número de comuna. El   subprograma debe agregar el envío al final de la lista que menos envíos tenga asignados. (4 puntos).  
+	c. Realice un procedimiento que reciba el vector principal, la ruta y nombre de un archivo de envíos y   agregue, al final del archivo, todos los envíos de las comunas que tengan todos los envíos entregados  
+Luego del proceso, las listas de las comunas en cuestión deben quedar vacías. Puede utilizar el subprograma:  
+  
+bool quitarPrimero(NodoListaSE *&lista, Pedido &p)  
+  
+Que quita el primer nodo de la lista, asignando al segundo como primero si hubiera más nodos o dejando la   lista en NULL si se quitara el último nodo. En caso que se haya podido quitar un nodo devuelve true y los   datos de la info del nodo a través del parámetro p. En caso de que no se haya podido quitar un nodo, la   función devuelve false. (4 puntos)  
