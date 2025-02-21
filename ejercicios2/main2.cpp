@@ -51,7 +51,7 @@ cout << "Ejercicio 1 (comentado): " << endl;
         }
     } */
 
-cout << "Ejercicio 2 (no muestra nada): " << endl; 
+cout << "Ejercicio 2 (de parcial): " << endl;
 
     Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
 
@@ -79,12 +79,16 @@ cout << "Ejercicio 2 (no muestra nada): " << endl;
     push(pila, 10);
     push(pila, 12);
     push(pila, 8);
-    
-    cout << pop(pila) << endl;
-    
-/*     char resultado = insertarEnTerceraPosicion(pila, 2000);
+
+    char resultado = insertarEnTerceraPosicion(pila, 2000);
     cout << resultado << endl;
-    cout << pop(pila) << endl; */
+
+    while(pila != NULL){
+        cout << pop(pila) << endl;
+        }
+
+cout << "Ejercicio 4 (de parcial): " << endl;
+
 
    return 0;
 }

@@ -77,3 +77,28 @@ Luego del proceso, las listas de las comunas en cuestión deben quedar vacías. 
   
 	Que quita el primer nodo de la lista, asignando al segundo como primero si hubiera más nodos o dejando la   lista en NULL si se quitara el último nodo. En caso que se haya podido quitar un nodo devuelve true y los   datos de la info del nodo a través del parámetro p. En caso de que no se haya podido quitar un nodo, la   función devuelve false. (4 puntos)  
 3. Dada una pila y un valor X colocar el valor X en la tercera posicion de la pila, retornando un parámetro con valor 'S' o 'N' según haya sido exitoso o no el requerimiento. (Definir parámetros y codificar).  
+4. Una consultora desea hacer una estadística sobre los cortes de luz en el país a lo largo del año. Para ello cuenta con un archivo (cortes.dat) con los siguientes datos:  
+		-Hora inicial de corte (hhmm)  
+		-Hora final de corte (hhmm)  
+		- ID de subestación  
+		-Día  
+		-Mes  
+		-ID de localidad sin orden  
+Se cuenta con:  
+Un vector de localidades completo ordenado por ID de localidad (PUP) con los siguientes datos:  
+		-Nombre de localidad  
+		-Cantidad de habitantes  
+A efectos de esta solución se debe considerar que todos los registro de corte se dan dentro del día registrado, es decir, no hay cortes que comiencen un día y terminen en otro.  
+Se solicita emitir un listado con los siguientes datos:  
+-Mes  
+-Cantidad de horas promedio de corte por mes  
+-Localidad (nombre)  
+-Total de horas de cortes  
+-Unidades de la multa  
+Se pide:  
+1) Declarar todas las estructuras necesarias para resolver la impresión del listado (2 puntos).  
+2) Imprimir el listado tal como se detalla arriba ordenado por MES y LOCALIDAD con el promedio de horas de corte para cada mes y calcular el importe de multa de localidad considerando que menos de 3 horas no se calculan, entre 3 y 6 se calculan a razón de 8 unidades de multa la hora, y más de 6 se calculan a razón de 12 unidades cada hora. Por ejemplo 3 horas de corten suman 24 unidades de multa y 8 horas sumarían 96.  
+Nota: para imprimir el listado debe resolver el problema desarrollando funciones con los parámetros que considere adecuados.  
+Puede utilizar funciones de biblioteca, siempre que respete las firmas que se enseñaron en clase.  
+Emitir listado con totales correctos (4 puntos).  
+Lógica adecuada para el cálculo de multas (4 puntos).  
