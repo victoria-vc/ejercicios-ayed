@@ -6,7 +6,12 @@
 
 using namespace std;
 
-// Ejercicio de parcial 1
+struct Nodo{
+	int info;
+	Nodo* sig;
+};
+
+/* Ejercicio de parcial 1
 
 struct Nodo{
     int legajo; // legajo porque es un solo campo
@@ -22,10 +27,26 @@ struct registro{
 struct tMatriz{
     int cantidad;
     Nodo* lista;
-};
+}; */
 
-Nodo* insertarOrdenado(Nodo*& lista, int legajo);
-int pop(Nodo*& lista);
+//listas
+void agregarNodo(Nodo*& lista, int x);
+void mostrar(Nodo* lista);
+void liberar(Nodo*& lista);
+Nodo* buscar(Nodo* lista, int v);
+void eliminar(Nodo*& lista, int v);
+int eliminarPrimerNodo(Nodo*& lista);
+Nodo* insertarOrdenado(Nodo*& lista, int v);
+void ordenar(Nodo*& lista);
+Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
+Nodo* insertaPrimero(Nodo*& l, int x);
+Nodo* insertarAlFinal(Nodo*& l, int x);
+//pilas
+void push(Nodo*& pila, int valor);
+int pop(Nodo*& pila);
+//Colas
+void encolar(Nodo*& colafte, Nodo*& colafin, int v);
+int desencolar(Nodo*& colafte, Nodo*& colafin);
 
 // Ejercicio de parcial 2
 

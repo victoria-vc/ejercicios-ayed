@@ -1,36 +1,179 @@
 #include "parcial.hpp"
-
-Nodo* insertarOrdenado(Nodo*& lista, int legajo) {
-    Nodo* aux = new Nodo();
-    aux->legajo = legajo;
-    aux->sig = NULL;
-
-    if (lista == NULL || lista->legajo > legajo) {
-        aux->sig = lista;
-        lista = aux;
-    } else {
-        Nodo* q = lista;
-        while (q->sig != NULL && q->sig->legajo < legajo) {
-            q = q->sig;
-        }
-        aux->sig = q->sig;
-        q->sig = aux;
-    }
-    return aux;
+void agregarNodo(Nodo*& lista, int x){
+	
+	Nodo* nuevo = new Nodo();
+	nuevo->info = x;
+	nuevo->sig = NULL;
+	
+	if(lista == NULL){
+		lista = nuevo;
+	} else{
+		Nodo* aux = lista;
+		while(aux->sig != NULL){
+			aux = aux->sig;	
+		}
+		aux->sig = nuevo;	
+	}
 }
 
-int pop(Nodo*& lista) {
-    if (lista == NULL) {
-        cerr << "Error: intentando hacer pop en una lista vacía." << endl;
-        return -1; // valor de error
-    }
-    int legajoAux;
-    Nodo* aux = lista;
-    legajoAux = aux->legajo;
-    lista = aux->sig;
+void mostrar(Nodo* lista){
+	 Nodo* aux = lista;
+	 
+	 while(aux != NULL) {
+	   cout << aux->info << endl;
+	   aux = aux->sig;
+	 }
+}
 
-    delete aux;
-    return legajoAux;
+
+void liberar(Nodo*& lista){
+	Nodo* aux;
+	while(lista != NULL){
+		aux = lista;
+		lista = lista->sig;
+		delete aux;
+	}
+}
+
+Nodo* buscar(Nodo* lista, int v){
+	Nodo* aux = lista;
+	
+	while(aux != NULL && aux->info != v){
+		aux = aux->sig;		
+	}
+	
+	return aux;
+}
+
+void eliminar(Nodo*& lista, int v){
+	Nodo* aux = lista;
+	Nodo* ant = NULL;
+	while(aux != NULL && aux->info != v){
+		ant = aux;
+		aux = aux->sig;		
+	}
+	if(ant != NULL){
+		ant->sig = aux->sig;
+	} else {
+		lista = aux->sig;
+	}
+	
+	delete aux;
+}
+
+int eliminarPrimerNodo(Nodo*& lista){
+	int retorno = lista->info;
+	Nodo* aux = lista;
+	lista = lista->sig;
+	delete aux;
+	return retorno;
+};
+
+Nodo* insertarOrdenado(Nodo*& lista, int v){
+	Nodo* nuevo = new Nodo();
+	nuevo->info = v;
+	nuevo->sig = NULL;
+	Nodo* aux = lista;
+	Nodo* ant = NULL;
+	while(aux != NULL && aux->info <= v){
+		ant = aux;
+		aux = aux->sig;
+	}
+	if(ant != NULL){
+		ant->sig = nuevo;
+	} else {
+		lista = nuevo;
+	}
+	nuevo->sig = aux;
+	
+	return nuevo;
+}
+
+void ordenar(Nodo*& lista){
+	Nodo* aux = NULL;
+	int x;
+	while(lista != NULL){
+		x = eliminarPrimerNodo(lista);
+		insertarOrdenado(aux,x);
+	}
+	lista = aux;
+}
+
+Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
+	enc = false;
+	Nodo* nodoBuscado = buscar(lista, v);
+	if(nodoBuscado != NULL){
+		enc = true;
+	} else{
+		nodoBuscado = insertarOrdenado(lista,v);
+	}
+	return nodoBuscado;
+}
+
+//pilas
+void push(Nodo*& pila, int valor){
+	Nodo* nuevo = new Nodo();
+	nuevo->info = valor;
+	nuevo->sig = pila;
+	pila = nuevo;
+}
+
+int pop(Nodo*& pila){
+	int retorno = pila->info;
+	Nodo* aux = pila;
+	pila = pila->sig;
+	delete aux;
+	return retorno;
+}
+
+//colas
+void encolar(Nodo*& colafte, Nodo*& colafin, int v){
+	Nodo* nuevo = new Nodo();
+	nuevo->info = v;
+	nuevo->sig = NULL;
+	if(colafte == NULL){
+		colafte = nuevo;
+	} else{
+		colafin->sig = nuevo;
+	}
+	colafin = nuevo;
+};
+
+
+int desencolar(Nodo*& colafte, Nodo*& colafin){
+	int retorno = colafte->info;
+	Nodo* aux = colafte;
+	colafte = colafte->sig;
+	if(colafte == NULL){
+		colafin = NULL;
+	}
+	delete aux;
+	return retorno;
+}
+
+
+Nodo* insertaPrimero(Nodo*& l, int x){
+    Nodo* p = new Nodo();
+    p->info = x;
+    p->sig = l;
+    l = p;
+    return p;
+}
+
+Nodo* insertarAlFinal(Nodo*& l, int x){
+    Nodo* nuevo = new Nodo();
+    nuevo->info = x;
+    nuevo->sig = NULL;
+    if (l == NULL) {
+        l = nuevo;
+    } else {
+        Nodo* aux = l;
+        while (aux->sig != NULL) {
+            aux = aux->sig;
+        }
+        aux->sig = nuevo;
+    }
+    return nuevo;
 }
 
 // Ejercicio de parcial 2
