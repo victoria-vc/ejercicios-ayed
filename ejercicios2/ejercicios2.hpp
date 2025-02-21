@@ -14,18 +14,18 @@ struct Nodo{
 
 //listas
 void agregarNodo(Nodo*& lista, int x);
-void mostrar(Nodo* lista);
-void mostrar_eliminandoNodo(Nodo* lista);
-void liberar(Nodo*& lista);
-Nodo* buscar(Nodo* lista, int v);
-void eliminarNodo(Nodo*& lista, int v);
+void mostrar(Nodo* lista); //
+void mostrar_eliminandoNodo(Nodo* lista); //
+void liberar(Nodo*& lista); //
+Nodo* buscar(Nodo* lista, int v); //
+void eliminarNodo(Nodo*& lista, int v); //
 int eliminarPrimerNodo(Nodo*& lista);
-Nodo* insertarOrdenado(Nodo*& lista, int v);
+Nodo* insertarOrdenado(Nodo*& lista, int v); //
 void ordenar(Nodo*& lista);
 Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
-Nodo* insertaPrimero(Nodo*& l, int x);
-Nodo* insertarAlFinal(Nodo*& l, int x);
-Nodo* insertarSinRepetir(Nodo*& lista, int v);
+Nodo* insertaPrimero(Nodo*& l, int x); // 
+Nodo* insertarAlFinal(Nodo*& l, int x); // 
+Nodo* insertarSinRepetir(Nodo*& lista, int v); //
 //pilas
 void push(Nodo*& pila, int valor);
 int pop(Nodo*& pila);
@@ -121,4 +121,4 @@ nodo* insertarOrdenado(nodo*&, archivo);
 void mayorGasto(matriz mat[][31]);
 
 
-#endif
+#endif EJERCICIOS2_H 

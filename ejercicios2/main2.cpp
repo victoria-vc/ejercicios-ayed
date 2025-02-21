@@ -88,101 +88,101 @@ cout << "Ejercicio 2 (de parcial): " << endl;
         }
  */
 cout << "Ejercicio 4 (de parcial): " << endl;
-// se solicita emitir un listado con:
-// mes, cantidad de hora promedio de corte por mes, localidad (nombre),
-// total de horas de corte, unidades de multa
+    // se solicita emitir un listado con:
+    // mes, cantidad de hora promedio de corte por mes, localidad (nombre),
+    // total de horas de corte, unidades de multa
 
-Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
-                            {14, "Arroyo Dulce", 6000},{16, "Arrecifes", 20000}}; // lo que "tenemos de datos"
-Registro reg[10]; // lo que "llega"
+    Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
+                                {14, "Arroyo Dulce", 6000},{16, "Arrecifes", 20000}}; // lo que "tenemos de datos"
+    Registro reg[10]; // lo que "llega"
 
-FILE* cortes = fopen("cortes.dat", "wb+"); // lo vamos a escribir, pero en el parcial ya estaría con leerlo
+    FILE* cortes = fopen("cortes.dat", "wb+"); // lo vamos a escribir, pero en el parcial ya estaría con leerlo
 
-reg[0].inicio_corte = 1202;
-reg[0].final_corte = 1404;
-reg[0].id_subestacion = 2;
-reg[0].dia = 02;
-reg[0].mes = 04;
-reg[0].id_localidad = 10;
+    reg[0].inicio_corte = 1202;
+    reg[0].final_corte = 1404;
+    reg[0].id_subestacion = 2;
+    reg[0].dia = 02;
+    reg[0].mes = 04;
+    reg[0].id_localidad = 10;
 
-reg[1].inicio_corte = 1900;
-reg[1].final_corte = 2030;
-reg[1].id_subestacion = 4;
-reg[1].dia = 10;
-reg[1].mes = 10;
-reg[1].id_localidad = 12;
+    reg[1].inicio_corte = 1900;
+    reg[1].final_corte = 2030;
+    reg[1].id_subestacion = 4;
+    reg[1].dia = 10;
+    reg[1].mes = 10;
+    reg[1].id_localidad = 12;
 
-reg[2].inicio_corte = 1000;
-reg[2].final_corte = 1200;
-reg[2].id_subestacion = 8;
-reg[2].dia = 20;
-reg[2].mes = 11;
-reg[2].id_localidad = 14;
+    reg[2].inicio_corte = 1000;
+    reg[2].final_corte = 1200;
+    reg[2].id_subestacion = 8;
+    reg[2].dia = 20;
+    reg[2].mes = 11;
+    reg[2].id_localidad = 14;
 
-reg[3].inicio_corte = 2200;
-reg[3].final_corte = 2340;
-reg[3].id_subestacion = 10;
-reg[3].dia = 28;
-reg[3].mes = 12;
-reg[3].id_localidad = 16;
+    reg[3].inicio_corte = 2200;
+    reg[3].final_corte = 2340;
+    reg[3].id_subestacion = 10;
+    reg[3].dia = 28;
+    reg[3].mes = 12;
+    reg[3].id_localidad = 16;
 
-// también lo podríamos haber llenado como arreglo vec[10] = {{...},{...}};
+    // también lo podríamos haber llenado como arreglo vec[10] = {{...},{...}};
 
-fwrite(&reg, sizeof(Registro), 4, cortes);
+    fwrite(&reg, sizeof(Registro), 4, cortes);
 
-int cantidad_horas_localidad[4] = {0}; // asumimos 4 localidades
-int cantidad_horas_mes[12] = {0};
-int unidades_multa[4] = {0};
+    int cantidad_horas_localidad[4] = {0}; // asumimos 4 localidades
+    int cantidad_horas_mes[12] = {0};
+    int unidades_multa[4] = {0};
 
-for(int i=0; i<4; i++){
-    int horas_corte = reg[i].final_corte - reg[i].inicio_corte;
-    cantidad_horas_localidad[i] += horas_corte;
-    cantidad_horas_mes[reg[i].mes -1] += horas_corte;
+    for(int i=0; i<4; i++){
+        int horas_corte = reg[i].final_corte - reg[i].inicio_corte;
+        cantidad_horas_localidad[i] += horas_corte;
+        cantidad_horas_mes[reg[i].mes -1] += horas_corte;
 
-    if(horas_corte < 3){
-        continue; // no se plica la multa
-    } else if(horas_corte >= 3 && horas_corte < 6){
-        unidades_multa[i] += horas_corte * 8;
-    } else if(horas_corte >= 6){
-        unidades_multa[i] += horas_corte * 12;
+        if(horas_corte < 3){
+            continue; // no se plica la multa
+        } else if(horas_corte >= 3 && horas_corte < 6){
+            unidades_multa[i] += horas_corte * 8;
+        } else if(horas_corte >= 6){
+            unidades_multa[i] += horas_corte * 12;
+        }
     }
-}
 
-for(int mes = 0; mes < 12; mes++){
-    if(cantidad_horas_mes[mes] > 0){
-        cout << "Mes: " << mes + 1 << ", Promedio de horas de corte: " << cantidad_horas_mes[mes] / 4.0 << endl;
+    for(int mes = 0; mes < 12; mes++){
+        if(cantidad_horas_mes[mes] > 0){
+            cout << "Mes: " << mes + 1 << ", Promedio de horas de corte: " << cantidad_horas_mes[mes] / 4.0 << endl;
+        }
     }
-}
 
-for(int i = 0; i < 4; i++){
-    cout << "Localidad: " << localidades[i].nombre_localidad << ", Total de horas de cortes: "
-     << cantidad_horas_localidad[i] << ", Unidades de multa: " << unidades_multa[i] << endl;
-}
+    for(int i = 0; i < 4; i++){
+        cout << "Localidad: " << localidades[i].nombre_localidad << ", Total de horas de cortes: "
+        << cantidad_horas_localidad[i] << ", Unidades de multa: " << unidades_multa[i] << endl;
+    }
 
 cout << "Ejercicio 5 (de parcial): " << endl;
 
-FILE* f = NULL;
-matriz mat[15][31] = {};
+    FILE* f = NULL;
+    matriz mat[15][31] = {};
 
-// llenamos de ejemplo:
-archivo ejemplos[] = {
-    {1, 1, "Gasto A", 100.0},
-    {1, 2, "Gasto B", 200.0},
-    {2, 1, "Gasto C", 150.0},
-    {2, 3, "Gasto D", 300.0},
-    {3, 1, "Gasto E", 250.0},
-    {3, 2, "Gasto F", 350.0},
-    {4, 1, "Gasto G", 400.0},
-    {4, 2, "Gasto H", 500.0}
-};
+    // llenamos de ejemplo:
+    archivo ejemplos[] = {
+        {1, 1, "Gasto A", 100.0},
+        {1, 2, "Gasto B", 200.0},
+        {2, 1, "Gasto C", 150.0},
+        {2, 3, "Gasto D", 300.0},
+        {3, 1, "Gasto E", 250.0},
+        {3, 2, "Gasto F", 350.0},
+        {4, 1, "Gasto G", 400.0},
+        {4, 2, "Gasto H", 500.0}
+    };
 
 
 
-int cantidad = sizeof(ejemplos) / sizeof(ejemplos[0]);
+    int cantidad = sizeof(ejemplos) / sizeof(ejemplos[0]);
 
-cargarEstructura(f, mat, ejemplos, cantidad);
-mostrarGastos(mat);
-mayorGasto(mat);
-return 0;
+    cargarEstructura(f, mat, ejemplos, cantidad);
+    mostrarGastos(mat);
+    mayorGasto(mat);
+    return 0;
 
 }
