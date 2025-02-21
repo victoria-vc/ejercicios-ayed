@@ -65,7 +65,7 @@ Se solicita:
 		-Un listado de los legajos ordenado por regional, carrera, legajo.  
 		-Un listado de los legajos ordenado por carrera, regional, legajo.  
 En ambos casos mostrar antes de listar la cantidad total de alumnos.  
-2. Un centro de distribución logístico de envíos de una plataforma de ventas online debe hacer su sistema para asignar los paquetes recibidos a los motoqueros que repartirán por las 15 distintas comunas de CABA que están  representadas por un vector. La posición 0 del vector corresponde a la comuna 1 y la 14 a la comuna 15. Cada comuna tiene, a lo sumo, dos motoqueros asignados. Considerando esta información, en cada posición hay:
+2. Un centro de distribución logístico de envíos de una plataforma de ventas online debe hacer su sistema para asignar los paquetes recibidos a los motoqueros que repartirán por las 15 distintas comunas de CABA que están  representadas por un vector. La posición 0 del vector corresponde a la comuna 1 y la 14 a la comuna 15. Cada comuna tiene, a lo sumo, dos motoqueros asignados. Considerando esta información, en cada posición hay:  
 		-Un entero que tiene la cantidad total de envíos ya entregados (se debe inicializar en cero en la declaración)     
 		-Dos listas SE de envíos, cada una contiene los envíos que tiene cada motoquero asignado a la comuna y cada envío tiene: dirección de entrega (hasta 100 caracteres), DNI del destinatario (xx.xxx.xxx), palabra clave (hasta 15 caracteres). Ambas listas deben inicializarse vacías en la declaración.  
 	a. Declare el vector principal y todos los tipos de datos necesarios para que sea válida la declaración del mismo. (2 puntos)  
