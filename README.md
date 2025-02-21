@@ -73,6 +73,6 @@ En ambos casos mostrar antes de listar la cantidad total de alumnos.
 	c. Realice un procedimiento que reciba el vector principal, la ruta y nombre de un archivo de envíos y   agregue, al final del archivo, todos los envíos de las comunas que tengan todos los envíos entregados  
 Luego del proceso, las listas de las comunas en cuestión deben quedar vacías. Puede utilizar el subprograma:  
   
-bool quitarPrimero(NodoListaSE *&lista, Pedido &p)  
+	bool quitarPrimero(NodoListaSE *&lista, Pedido &p)  
   
-Que quita el primer nodo de la lista, asignando al segundo como primero si hubiera más nodos o dejando la   lista en NULL si se quitara el último nodo. En caso que se haya podido quitar un nodo devuelve true y los   datos de la info del nodo a través del parámetro p. En caso de que no se haya podido quitar un nodo, la   función devuelve false. (4 puntos)  
+	Que quita el primer nodo de la lista, asignando al segundo como primero si hubiera más nodos o dejando la   lista en NULL si se quitara el último nodo. En caso que se haya podido quitar un nodo devuelve true y los   datos de la info del nodo a través del parámetro p. En caso de que no se haya podido quitar un nodo, la   función devuelve false. (4 puntos)  
