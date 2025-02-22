@@ -11,27 +11,32 @@ struct Nodo{
 	Nodo* sig;
 };
 
-
-//listas
-void agregarNodo(Nodo*& lista, int x);
-void mostrar(Nodo* lista); //
-void mostrar_eliminandoNodo(Nodo* lista); //
-void liberar(Nodo*& lista); //
-Nodo* buscar(Nodo* lista, int v); //
-void eliminarNodo(Nodo*& lista, int v); //
-int eliminarPrimerNodo(Nodo*& lista);
-Nodo* insertarOrdenado(Nodo*& lista, int v); //
-void ordenar(Nodo*& lista);
-Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
-Nodo* insertaPrimero(Nodo*& l, int x); // 
-Nodo* insertarAlFinal(Nodo*& l, int x); // 
-Nodo* insertarSinRepetir(Nodo*& lista, int v); //
-//pilas
+// -------------------- PERMITIDAS USAR EN LOS PARCIALES DEL CURSO -------------------- //
+// listas
+void mostrar(Nodo* lista); 
+void mostrar_eliminandoNodo(Nodo* lista); 
+void liberar(Nodo*& lista); 
+Nodo* buscar(Nodo* lista, int v); 
+void eliminarNodo(Nodo*& lista, int v); 
+Nodo* insertarOrdenado(Nodo*& lista, int v); 
+Nodo* insertaPrimero(Nodo*& l, int x); 
+Nodo* insertarAlFinal(Nodo*& l, int x); 
+Nodo* insertarSinRepetir(Nodo*& lista, int v); 
+// pilas
 void push(Nodo*& pila, int valor);
 int pop(Nodo*& pila);
-//Colas
+// colas
 void encolar(Nodo*& colafte, Nodo*& colafin, int v);
 int desencolar(Nodo*& colafte, Nodo*& colafin);
+// ----------------------------------------------------------------------------------- //
+
+// -------------------- DEMÁS FUNCIONES -------------------- //
+void agregarNodo(Nodo*& lista, int x);
+int eliminarPrimerNodo(Nodo*& lista);
+void ordenar(Nodo*& lista);
+Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
+// --------------------------------------------------------- //
+
 
 /* Ejercicio 1 (de parcial)
 struct Nodo{
@@ -121,7 +126,6 @@ nodo* insertarOrdenado(nodo*&, archivo);
 void mayorGasto(matriz mat[][31]);
 
 // Ejercicio 6 (integrador del curso 21/02/25)
-
 struct Pedido{
     int id_plato;
     int cantidad;
