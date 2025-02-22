@@ -176,8 +176,6 @@ cout << "Ejercicio 5 (de parcial): " << endl;
         {4, 2, "Gasto H", 500.0}
     };
 
-
-
     int cantidad = sizeof(ejemplos) / sizeof(ejemplos[0]);
 
     cargarEstructura(f, mat, ejemplos, cantidad);

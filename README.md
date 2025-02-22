@@ -121,4 +121,25 @@ Sector 1
 Sector 2  
 		...  
 Detalle e importe de cada gasto (ordenado de mayor a menor por importe) agrupado por sector y día.  
-- Función mayorGasto debe mostrar qué sector y qué día se realizó el mayor gasto (suponer único) (3 puntos)    
+- Función mayorGasto debe mostrar qué sector y qué día se realizó el mayor gasto (suponer único) (3 puntos)   
+6. ((falta enunciado)) 
+7. En la colonia de vacaciones "verano divertido" desean hacer una estadística con las actividades realizadas a lo largo del verano. La colonia cuenta con 35 docentes para sus diversas actividades.
+Se cuenta con un archivo "vacaciones.dat" sin orden con el detalle de las actividades realizadas.
+	-Nombre de docente (hasta 60 caracteres)
+	-Legajo del docente (numérico consecutivo inicia en 500)
+	-Nombre de la actividad (hasta 60 caracteres)
+	-Edad tope
+	-Cantidad máxima de niños
+	-Entorno (acuático/parque/interior) [1..3]
+	-Uso de elementos (si/no)
+	-Fecha (MMDD)
+Considere que los docentes se repiten ya que cada uno pudo haber realizado muchas actividades en diferentes días.
+Usted deberá informar:
+ - Lista de las actividades realizadas por CADA DOCENTE, sin repetición y ordenadas por docente/actividad.
+ - Cantidad de actividades realizadas por cada docente en total en todo el periodo de la colonia.
+ - Nombre de los docentes que realizaron al menos una actividad en entorno acuático.
+Se pide:
+ - Codifique la declaración de todas las estructuras de datos. (2 puntos)
+ - Codifique la función cargarEstructuras que reciba como parámetro lo que usted estume necesario (sin usar variables globales) y cargue los datos recibidos preparándolos del modo más adecuado para poder listar los datos solicitados. (3 puntos)
+ - Codigique la función realizarInforme que utilizando la estructura que genera la función del punto anterior imprima por pantalla la información solicitada. (5 puntos)
+Puede utilizar las funciones que necesite -> insertarOrdenado(), insertarSinRepetir(), pop(), push(), encolar(), desencolar(), etc. 
