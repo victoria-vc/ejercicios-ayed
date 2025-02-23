@@ -194,7 +194,7 @@ Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
 // ----------------------------------------------------------------------------------- //
 
 // Ejercicio 2 (de parcial)
-void inicializar_comunas(Comuna comunas[], int size){
+/* void inicializar_comunas(Comuna comunas[], int size){
     for(int i=0; i<size; i++){
         comunas[i].total_envios = 0;
         comunas[i].lista = NULL;
@@ -423,7 +423,7 @@ tipoActividad pop(NodoDocente*& lista){
 	lista = lista->sig;
 	delete aux;
 	return info;
-}
+} */
 
 // Ejercicio 8 (con lista)
 

@@ -56,7 +56,7 @@ struct tMatriz{
 }; */
 
 // Ejercicio 2 (de parcial)
-struct Pedido{
+/* struct Pedido{
     char direccion[100+1];
     char dni[12];
     char palabra_clave[15];
@@ -206,6 +206,6 @@ NodoBoleta* insertarOrdenado(NodoBoleta*& lista, boleta v);
 void pop(NodoBoleta*& lista);
 void liberar(NodoBoleta*& lista);
 void ingresar_datos(NodoBoleta*& lista);
-void escribir_archivo(NodoBoleta*& lista);
+void escribir_archivo(NodoBoleta*& lista); */
 
-#endif EJERCICIOS2_H 
+#endif 

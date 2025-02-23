@@ -183,7 +183,7 @@ cout << "Ejercicio 5 (de parcial): " << endl;
     mayorGasto(mat);
  */ 
 
- cout << "holaaaaaaaaaa" << endl;
+ /* cout << "holaaaaaaaaaa" << endl;
 cout << "Ejercicio 8: (sin lista) " << endl;
 
     int cargas;
@@ -218,7 +218,7 @@ cout << "Ejercicio 8: (sin lista) " << endl;
     fclose(arch);
 
 
-
+ */
 
 
 
