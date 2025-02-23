@@ -1,22 +1,7 @@
 #include "ejercicios2.hpp"
 
-void agregarNodo(Nodo*& lista, int x){
-	
-	Nodo* nuevo = new Nodo();
-	nuevo->info = x;
-	nuevo->sig = NULL;
-	
-	if(lista == NULL){
-		lista = nuevo;
-	} else{
-		Nodo* aux = lista;
-		while(aux->sig != NULL){
-			aux = aux->sig;	
-		}
-		aux->sig = nuevo;	
-	}
-}
-
+// -------------------- PERMITIDAS USAR EN LOS PARCIALES DEL CURSO -------------------- //
+// listas
 void mostrar(Nodo* lista){
 	 Nodo* aux = lista;
 	 
@@ -32,7 +17,6 @@ void mostrar_eliminandoNodo(Nodo* lista){
 	}
 	return;
 }
-
 
 void liberar(Nodo*& lista){
 	while(lista){
@@ -67,14 +51,6 @@ void eliminarNodo(Nodo*& lista, int v){
 	delete aux;
 }
 
-int eliminarPrimerNodo(Nodo*& lista){
-	int retorno = lista->info;
-	Nodo* aux = lista;
-	lista = lista->sig;
-	delete aux;
-	return retorno;
-};
-
 Nodo* insertarOrdenado(Nodo*& lista, int v){
 	Nodo* nuevo = new Nodo();
 	nuevo->info = v;
@@ -94,26 +70,28 @@ Nodo* insertarOrdenado(Nodo*& lista, int v){
 	
 	return nuevo;
 }
-
-void ordenar(Nodo*& lista){
-	Nodo* aux = NULL;
-	int x;
-	while(lista != NULL){
-		x = eliminarPrimerNodo(lista);
-		insertarOrdenado(aux,x);
-	}
-	lista = aux;
+Nodo* insertaPrimero(Nodo*& l, int x){
+    Nodo* p = new Nodo();
+    p->info = x;
+    p->sig = l;
+    l = p;
+    return p;
 }
 
-Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
-	enc = false;
-	Nodo* nodoBuscado = buscar(lista, v);
-	if(nodoBuscado != NULL){
-		enc = true;
-	} else{
-		nodoBuscado = insertarOrdenado(lista,v);
-	}
-	return nodoBuscado;
+Nodo* insertarAlFinal(Nodo*& l, int x){
+    Nodo* nuevo = new Nodo();
+    nuevo->info = x;
+    nuevo->sig = NULL;
+    if (l == NULL) {
+        l = nuevo;
+    } else {
+        Nodo* aux = l;
+        while (aux->sig != NULL) {
+            aux = aux->sig;
+        }
+        aux->sig = nuevo;
+    }
+    return nuevo;
 }
 
 Nodo* insertarSinRepetir(Nodo*& lista, int v){
@@ -140,7 +118,7 @@ int pop(Nodo*& pila){
 	return retorno;
 }
 
-//colas
+// colas
 void encolar(Nodo*& colafte, Nodo*& colafin, int v){
 	Nodo* nuevo = new Nodo();
 	nuevo->info = v;
@@ -164,31 +142,55 @@ int desencolar(Nodo*& colafte, Nodo*& colafin){
 	delete aux;
 	return retorno;
 }
+// ----------------------------------------------------------------------------------- //
 
-
-Nodo* insertaPrimero(Nodo*& l, int x){
-    Nodo* p = new Nodo();
-    p->info = x;
-    p->sig = l;
-    l = p;
-    return p;
+// --------------------------------- DEMÁS FUNCIONES --------------------------------- //
+void agregarNodo(Nodo*& lista, int x){
+	
+	Nodo* nuevo = new Nodo();
+	nuevo->info = x;
+	nuevo->sig = NULL;
+	
+	if(lista == NULL){
+		lista = nuevo;
+	} else{
+		Nodo* aux = lista;
+		while(aux->sig != NULL){
+			aux = aux->sig;	
+		}
+		aux->sig = nuevo;	
+	}
 }
 
-Nodo* insertarAlFinal(Nodo*& l, int x){
-    Nodo* nuevo = new Nodo();
-    nuevo->info = x;
-    nuevo->sig = NULL;
-    if (l == NULL) {
-        l = nuevo;
-    } else {
-        Nodo* aux = l;
-        while (aux->sig != NULL) {
-            aux = aux->sig;
-        }
-        aux->sig = nuevo;
-    }
-    return nuevo;
+int eliminarPrimerNodo(Nodo*& lista){
+	int retorno = lista->info;
+	Nodo* aux = lista;
+	lista = lista->sig;
+	delete aux;
+	return retorno;
 }
+
+void ordenar(Nodo*& lista){
+	Nodo* aux = NULL;
+	int x;
+	while(lista != NULL){
+		x = eliminarPrimerNodo(lista);
+		insertarOrdenado(aux,x);
+	}
+	lista = aux;
+}
+
+Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
+	enc = false;
+	Nodo* nodoBuscado = buscar(lista, v);
+	if(nodoBuscado != NULL){
+		enc = true;
+	} else{
+		nodoBuscado = insertarOrdenado(lista,v);
+	}
+	return nodoBuscado;
+}
+// ----------------------------------------------------------------------------------- //
 
 // Ejercicio 2 (de parcial)
 void inicializar_comunas(Comuna comunas[], int size){
