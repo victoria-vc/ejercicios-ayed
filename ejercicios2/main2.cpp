@@ -1,8 +1,8 @@
 #include "ejercicios2.hpp"
 
 int main(){
-
-cout << "Ejercicio 1 (comentado): " << endl; 
+cout << "SOLUCIONAR PROBLEMA, AUNQUE ESTE COMENTADO SE MUESTRA IGUAL ._." << endl;
+/* cout << "Ejercicio 1 (comentado): " << endl; 
     // Comentado porque no está terminado
 
     /* int i, j, legajo;
@@ -181,7 +181,7 @@ cout << "Ejercicio 5 (de parcial): " << endl;
     cargarEstructura(f, mat, ejemplos, cantidad);
     mostrarGastos(mat);
     mayorGasto(mat);
- */
+ */ 
 
  cout << "holaaaaaaaaaa" << endl;
 cout << "Ejercicio 8: (sin lista) " << endl;
@@ -219,13 +219,6 @@ cout << "Ejercicio 8: (sin lista) " << endl;
 
 
 
-cout << "Ejercicio 8: (con lista) " << endl;
-
-    NodoBoleta* lista = NULL;
-
-    ingresar_datos(lista);
-    escribir_archivo(lista);
-    liberar(lista);
 
 
 

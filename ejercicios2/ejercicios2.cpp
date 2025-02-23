@@ -299,6 +299,7 @@ void mostrarGastos(matriz mat[][31]){
 		}
 	}
 }
+
 void mayorGasto(matriz mat[][31]){
 	int sector_mayor = 0;
 	int dia_mayor = 0;
@@ -426,83 +427,3 @@ tipoActividad pop(NodoDocente*& lista){
 
 // Ejercicio 8 (con lista)
 
-NodoBoleta* insertarOrdenado(NodoBoleta*& lista, boleta v){
-	NodoBoleta* nuevo = new NodoBoleta();
-	nuevo->info = v;
-	nuevo->sig = NULL;
-
-	NodoBoleta* aux = lista;
-	NodoBoleta* ant = NULL;
-	
-	while(aux != NULL && strcmp(aux->info.nya,v.nya) > 0){
-		ant = aux;
-		aux = aux->sig;
-	}
-	if(ant != NULL){
-		ant->sig = nuevo;
-	} else {
-		lista = nuevo;
-	}
-	nuevo->sig = aux;
-	
-	return nuevo;
-}
-
-void pop(NodoBoleta*& lista){
-	boleta retorno = lista->info;
-	NodoBoleta* aux = lista;
-	lista = lista->sig;
-	delete aux;
-}
-
-
-void liberar(NodoBoleta*& lista){
-	while(lista){
-		pop(lista);
-	}
-	return;
-}
-
-void ingresar_datos(NodoBoleta*& lista){
-	while(true){
-		boleta nueva_boleta;
-
-		cout <<"Ingrese legajo o -1 para terminar" << endl;
-		cin >> nueva_boleta.num_legajo;
-		if(nueva_boleta.num_legajo == -1){
-			break;
-		}
-
-		cout << "Ingrese código de materia: ";
-		cin >> nueva_boleta.cod_materia;
-		cout << "Ingrese día: ";
-		cin >> nueva_boleta.dia_examen;
-		cout << "Mes: mayo" << endl;
-		nueva_boleta.mes_examen = 5;
-		cout << "Ingrese año: ";
-		cin >> nueva_boleta.año_examen;
-		cout << "Ingrese nombre y apellido: " << endl;
-		cin.ignore(); 
-		cin.getline(nueva_boleta.nya, 26);
-
-		if(strcmp(nueva_boleta.nya, "x") == 0){
-			break;
-		}
-		insertarOrdenado(lista, nueva_boleta);
-	}
-}
-
-void escribir_archivo(NodoBoleta*& lista){
-	FILE* arch = fopen("diafinales.dat", "wb");
-	if(!arch){
-		cout << "Error para escribir el archivo" << endl;
-		return;
-	}
-
-	NodoBoleta* actual = lista;
-	while(actual != NULL){
-		fwrite(&actual->info, sizeof(boleta), 1, arch);
-		actual = actual->sig;
-	}
-	fclose(arch);
-}
