@@ -78,3 +78,29 @@ string Tendencia(int AA, int BB){
     }   
 }
 
+// Ejercicio 21
+
+void ordenar_precios(registro_precios precios[], int len){
+    for(int i=0; i<len-1; i++){
+        for(int j=0; j<len-i-1; j++){
+            if(precios[j].num_articulo > precios[j+1].num_articulo){
+                registro_precios temp = precios[j];
+                precios[j] = precios[j+1];
+                precios[j+1] = temp;
+            }
+        }
+    }
+}
+
+
+
+void imprimir_precios(registro_precios precios[], int len){
+    for(int i=0; i<len; i++){
+      cout << "El artículo con número " << precios[i].num_articulo << endl;
+      cout << "tiene " << precios[i].cantidad_stock << " unidades disponibles" << endl;
+      cout <<"cada una a $" << precios[i].precioXunidad << endl;
+      cout << "con número de proveedor " << precios[i].num_proveedor << endl;
+      cout << "Descripción: " << precios[i].desc_articulo << endl;
+        
+    }
+}

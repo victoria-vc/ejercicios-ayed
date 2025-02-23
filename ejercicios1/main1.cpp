@@ -453,8 +453,21 @@ cout << "Ejercicio 20: " << endl;
  
 */
 
+// Ejercicio 21
+int len = 4;
+registro_precios regprecios[len] = {{12, "alfajor", 2340.2, 200, 10000},
+                                   {2, "chocolate", 2440.2, 200, 600},
+                                   {9, "titas", 2460.2, 200, 1990},
+                                   {7, "bonobon", 260.2, 200, 150}};
 
+FILE* archivoP = fopen("precios.dat", "wb");
 
+fwrite(&regprecios, sizeof(registro_precios), 4, archivoP);
+
+ordenar_precios(regprecios, len);
+imprimir_precios(regprecios, len);
+
+fclose(archivoP);
 
 return 0;
 

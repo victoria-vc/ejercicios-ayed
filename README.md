@@ -54,6 +54,18 @@ Resto -> En ascenso
     	-Informe el producto de los elementos impares que ocupen posición par. 
 20. Se conoce de cada alumno de un curso los siguientes datos: legajo (8 digitos) y las notas de 2 parciales (0...10), que finaliza con un legajo negativo.  
 Se pide desarrollar un programa que ingrese los datos de los alumnos por teclado y grabe un archivo binario "curso.bin" con una línea por cada alumno, con el número de legajo y su promedio (real).   
+21. Dado un archivo PRECIOS (desordenado) con los precios de cada artículo, donde cada registro contiene:  
+	- Número de artículo (5 dígitos)  
+	- Descripción del artículo (20 caracteres)  
+	- Precio por unidad (real)  
+	- Cantidad en stock  
+	- Número de proveedor (4 dígitos)  
+Desarrollar el programa que imprima el contenido del archivo ordenado por:  
+- Número de artículo creciente  
+- Descripción del artículo (alfabético creciente)  
+- Número de proveedor creciente y dentro del mismo por Número de artículo creciente  
+- Número de proveedor creciente y dentro del mismo por Número de artículo decreciente  
+
 ## Ejercicios con estructuras dinámicas y estilo parcial   
 1. Dadas 20 regionales y 10 carreras de la UTN, y un archivo con los legajos de los alumnos de todas las facultades con los siguientes datos:  
 		-ID regional (numéricos de 1 a 20)  
@@ -120,4 +132,3 @@ Sector 2
 		...  
 Detalle e importe de cada gasto (ordenado de mayor a menor por importe) agrupado por sector y día.  
 - Función mayorGasto debe mostrar qué sector y qué día se realizó el mayor gasto (suponer único) (3 puntos)   
-6. 

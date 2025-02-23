@@ -58,6 +58,18 @@ struct alumno{
     float promedio;
 };
 
+// Ejercicio 21
+struct registro_precios{
+    int num_articulo;
+    char desc_articulo[20];
+    float precioXunidad;
+    int cantidad_stock;
+    int num_proveedor;
+};
+
+void ordenar_precios (registro_precios precios[], int len);
+void imprimir_precios(registro_precios precios[], int len);
+
 
 
 
