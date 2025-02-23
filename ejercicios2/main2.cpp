@@ -92,7 +92,7 @@ cout << "Ejercicio 4 (de parcial): " << endl;
     // mes, cantidad de hora promedio de corte por mes, localidad (nombre),
     // total de horas de corte, unidades de multa
 
-    Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
+  /*   Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
                                 {14, "Arroyo Dulce", 6000},{16, "Arrecifes", 20000}}; // lo que "tenemos de datos"
     Registro reg[10]; // lo que "llega"
 
@@ -181,6 +181,58 @@ cout << "Ejercicio 5 (de parcial): " << endl;
     cargarEstructura(f, mat, ejemplos, cantidad);
     mostrarGastos(mat);
     mayorGasto(mat);
+ */
+
+ cout << "holaaaaaaaaaa" << endl;
+cout << "Ejercicio 8: (sin lista) " << endl;
+
+    int cargas;
+
+   cout << "Ingrese la cantidad de cargas" << endl;
+   cin >> cargas;
+   boleta inscripciones[cargas] = {0};
+    
+   FILE* arch = fopen("diafinales.dat", "wb");
+
+   for(int i=0; i<cargas; i++){
+    cout <<"Ingrese legajo: ";
+    cin >> inscripciones[i].num_legajo;
+    cout <<"Ingrese código de materia: ";
+    cin >> inscripciones[i].cod_materia;
+    cout <<"Ingrese día: ";
+    cin >> inscripciones[i].dia_examen;
+    cout <<"Mes: mayo ";
+    inscripciones[i].mes_examen = 5;
+    cout <<"Ingrese año: ";
+    cin >> inscripciones[i].año_examen;
+    cout << "Ingrese nombre y apellido: " << endl;
+    cin.ignore();
+    cin.getline(inscripciones[i].nya, 26);
+    if(strcmp(inscripciones[i].nya, "x") == 0){
+        break;
+    }
+   }
+
+    fwrite(&inscripciones, sizeof(boleta), cargas, arch);
+
+    fclose(arch);
+
+
+
+cout << "Ejercicio 8: (con lista) " << endl;
+
+    NodoBoleta* lista = NULL;
+
+    ingresar_datos(lista);
+    escribir_archivo(lista);
+    liberar(lista);
+
+
+
+
+
+
+
     return 0;
 
 }

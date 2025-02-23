@@ -3,7 +3,7 @@
 
 int main(){
     
-cout << "Ejercicio 1:" << endl;
+/* cout << "Ejercicio 1:" << endl;
 
     int a = 10;
     int b = 30;
@@ -77,7 +77,7 @@ cout <<"Ejercicio 7:" << endl;
     dis1 = dis1*60;
     dis2 = dis2*60; */
 
-    vel1 = 1500 / dis1;
+    /* vel1 = 1500 / dis1;
     vel2 = 1500 / dis2;
 
     if(vel1 > vel2){
@@ -449,7 +449,10 @@ cout << "Ejercicio 20: " << endl;
         }
 
 
-    fclose(f);
+    fclose(f); 
+ 
+*/
+
 
 
 

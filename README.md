@@ -54,7 +54,6 @@ Resto -> En ascenso
     	-Informe el producto de los elementos impares que ocupen posición par. 
 20. Se conoce de cada alumno de un curso los siguientes datos: legajo (8 digitos) y las notas de 2 parciales (0...10), que finaliza con un legajo negativo.  
 Se pide desarrollar un programa que ingrese los datos de los alumnos por teclado y grabe un archivo binario "curso.bin" con una línea por cada alumno, con el número de legajo y su promedio (real).   
-
 ## Ejercicios con estructuras dinámicas y estilo parcial   
 1. Dadas 20 regionales y 10 carreras de la UTN, y un archivo con los legajos de los alumnos de todas las facultades con los siguientes datos:  
 		-ID regional (numéricos de 1 a 20)  
@@ -142,3 +141,12 @@ Se pide:
  - Codifique la función cargarEstructuras que reciba como parámetro lo que usted estume necesario (sin usar variables globales) y cargue los datos recibidos preparándolos del modo más adecuado para poder listar los datos solicitados. (3 puntos)
  - Codigique la función realizarInforme que utilizando la estructura que genera la función del punto anterior imprima por pantalla la información solicitada. (5 puntos)
 Puede utilizar las funciones que necesite -> insertarOrdenado(), insertarSinRepetir(), pop(), push(), encolar(), desencolar(), etc. 
+8. Se dispone de un conjunto de boletas de inscripción de alumnos a examen en el mes de mayo.  
+Cada boleta tiene los siguientes datos: nombre y apellido, número de legajo, código de materia, día, mes y año del examen. Los datos finalizan con un nombre y apellido = "x".  
+Desarrollar un programa que a partir del ingreso de las boletas mencionadas, por teclado, genere un archivo binario de inscripción de alumnos a exámenes finales "diafinales.dat", según el siguiente diseño:  
+a. Número de legajo (8 dígitos)
+b. Código de materia (6 dígitos)
+c. Día del examen (1...31)
+d. Mes del examen (1...12)
+e. Año del examen (4 dígitos)
+f. Nombre y apellido (26 caracteres)

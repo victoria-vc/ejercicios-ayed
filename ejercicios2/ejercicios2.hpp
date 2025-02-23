@@ -187,5 +187,25 @@ struct vector{
 
 void cargarEstructura(FILE*& f, vector v[]);
 
+// Ejercicio 8
+struct boleta{
+    char nya[25];
+    int num_legajo; // 8 dígitos
+    int cod_materia;
+    int dia_examen;
+    int mes_examen;
+    int año_examen;
+};
+
+struct NodoBoleta{
+    boleta info;
+    NodoBoleta* sig;
+};
+
+NodoBoleta* insertarOrdenado(NodoBoleta*& lista, boleta v);
+void pop(NodoBoleta*& lista);
+void liberar(NodoBoleta*& lista);
+void ingresar_datos(NodoBoleta*& lista);
+void escribir_archivo(NodoBoleta*& lista);
 
 #endif EJERCICIOS2_H 
