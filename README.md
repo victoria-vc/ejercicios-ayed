@@ -51,12 +51,11 @@ Resto -> En ascenso
 18. Ingresar un valor entero N (<30) y a continuación un conjunto de N elementos. Si el último elemento del conjunto tiene un valor menor que 10 imprimir los negativos y en caso contrario los demás.  
 19. Dado un conjunto (<100) de valores enteros de los cuales el último es cero y no debe procesarse:  
     	-Informe el valor mínimo, su posición dentro del conjunto, si el mínimo no es único, informar todas las posiciones donde se encuentre.  
-    	-Informe el producto de los elementos impares que ocupen posición par.  
-20. Dado un número N (<25), y dos vectores A y B de N elementos que contenga números reales:  
-    	-Genere e informe un tercer vector C intercalando los valores de posición impar de A y los valores de posición par de B.  
-    	-Genere e informe un tercer vector D donde cada elemento contenga un valor cero si los elementos de una misma posición A y B son iguales, o un valor uno si no lo son.  
+    	-Informe el producto de los elementos impares que ocupen posición par. 
+20. Se conoce de cada alumno de un curso los siguientes datos: legajo (8 digitos) y las notas de 2 parciales (0...10), que finaliza con un legajo negativo.  
+Se pide desarrollar un programa que ingrese los datos de los alumnos por teclado y grabe un archivo binario "curso.bin" con una línea por cada alumno, con el número de legajo y su promedio (real).   
 
-## Ejercicios del aula virtual - Curso de verano 2025 (PARTE 2)    
+## Ejercicios con estructuras dinámicas y estilo parcial   
 1. Dadas 20 regionales y 10 carreras de la UTN, y un archivo con los legajos de los alumnos de todas las facultades con los siguientes datos:  
 		-ID regional (numéricos de 1 a 20)  
 		-ID carrera (numéricos de 1 a 10)  

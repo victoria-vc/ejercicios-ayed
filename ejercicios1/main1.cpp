@@ -1,4 +1,4 @@
-#include "ejercicios.hpp"
+#include "ejercicios1.hpp"
 
 
 int main(){
@@ -413,8 +413,43 @@ cout << "Ejercicio 19: " << endl;
         cout << "No hay números pares en posiciones impares" << endl;
     }
 
-    cout << "Ejercicio 20: " << endl;
+cout << "Ejercicio 20: " << endl;
 
+    int cant_alumnos;
+
+    cout << "Ingrese la cantidad de alumnos que va a cargar" << endl;
+    cin >> cant_alumnos;
+
+    alumno al[cant_alumnos];
+
+    cout << "Ingrese datos de los alumnos" << endl;
+    for(int i=0; i<cant_alumnos; i++){
+        cout << "Legajo: " << endl;
+        cin >> al[i].legajo;
+            if(al[i].legajo < 0){
+                break;
+            }
+        cout << "Nota de parcial 1: " << endl;
+        cin >> al[i].notas[0];
+        cout << "Nota de parcial 2: " << endl;
+        cin >> al[i].notas[1];
+        // promedio por alumno:
+        al[i].promedio = (al[i].notas[0] + al[i].notas[1]) / 2.0;
+    }
+    
+    FILE* f = fopen("curso.bin", "wb");
+
+    fwrite(&al, sizeof(alumno), cant_alumnos, f);
+
+
+        for(int i= 0; i<cant_alumnos; i++){
+            cout << "Alumno de legajo: " << al[i].legajo << endl;
+            cout << "sus notas: " << al[i].notas[0] << ", " << al[i].notas[1] << endl;
+            cout << "y su promedio: " << al[i].promedio << endl;
+        }
+
+
+    fclose(f);
 
 
 

@@ -51,8 +51,12 @@ float calcularPorcentajeDiferencia(int A, int B);
 // Ejercicio 16
 string Tendencia(int AA, int BB);
 
-
-
+// Ejercicio 20
+struct alumno{
+    int legajo; // 8 dígitos
+    int notas[2]; //notas de 2 parciales
+    float promedio;
+};
 
 
 #endif
