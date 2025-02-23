@@ -1,7 +1,7 @@
 #include "ejercicios2.hpp"
 
 int main(){
-cout << "SOLUCIONAR PROBLEMA, AUNQUE ESTE COMENTADO SE MUESTRA IGUAL ._." << endl;
+
 /* cout << "Ejercicio 1 (comentado): " << endl; 
     // Comentado porque no está terminado
 
@@ -49,11 +49,11 @@ cout << "SOLUCIONAR PROBLEMA, AUNQUE ESTE COMENTADO SE MUESTRA IGUAL ._." << end
                 cout << legajo << endl;
             }
         }
-    } */
+    } 
 
 cout << "Ejercicio 2 (de parcial): " << endl;
 
-   /*  Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
+     Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
 
     inicializar_comunas(vec, 15);
 
@@ -86,13 +86,13 @@ cout << "Ejercicio 2 (de parcial): " << endl;
     while(pila != NULL){
         cout << pop(pila) << endl;
         }
- */
+ 
 cout << "Ejercicio 4 (de parcial): " << endl;
     // se solicita emitir un listado con:
     // mes, cantidad de hora promedio de corte por mes, localidad (nombre),
     // total de horas de corte, unidades de multa
 
-  /*   Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
+     Localidad localidades[4] = {{10, "Salto", 50000},{12, "Gahan", 10000},
                                 {14, "Arroyo Dulce", 6000},{16, "Arrecifes", 20000}}; // lo que "tenemos de datos"
     Registro reg[10]; // lo que "llega"
 
@@ -181,9 +181,8 @@ cout << "Ejercicio 5 (de parcial): " << endl;
     cargarEstructura(f, mat, ejemplos, cantidad);
     mostrarGastos(mat);
     mayorGasto(mat);
- */ 
+ 
 
- /* cout << "holaaaaaaaaaa" << endl;
 cout << "Ejercicio 8: (sin lista) " << endl;
 
     int cargas;
