@@ -30,12 +30,12 @@ void encolar(Nodo*& colafte, Nodo*& colafin, int v);
 int desencolar(Nodo*& colafte, Nodo*& colafin);
 // ----------------------------------------------------------------------------------- //
 
-// -------------------- DEMÁS FUNCIONES -------------------- //
+// --------------------------------- DEMÁS FUNCIONES --------------------------------- //
 void agregarNodo(Nodo*& lista, int x);
 int eliminarPrimerNodo(Nodo*& lista);
 void ordenar(Nodo*& lista);
 Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
-// --------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
 
 
 /* Ejercicio 1 (de parcial)
