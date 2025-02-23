@@ -38,8 +38,8 @@ Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc);
 // ----------------------------------------------------------------------------------- //
 
 
-/* Ejercicio 1 (de parcial)
-struct Nodo{
+// Ejercicio 1 (de parcial)
+struct NodoAl{
     int legajo; // legajo porque es un solo campo
     Nodo* sig;
 };
@@ -53,10 +53,10 @@ struct registro{
 struct tMatriz{
     int cantidad;
     Nodo* lista;
-}; */
+}; 
 
 // Ejercicio 2 (de parcial)
-/* struct Pedido{
+struct Pedido{
     char direccion[100+1];
     char dni[12];
     char palabra_clave[15];
@@ -125,87 +125,10 @@ void mostrarGastos(matriz[][31]);
 nodo* insertarOrdenado(nodo*&, archivo);
 void mayorGasto(matriz mat[][31]);
 
-// Ejercicio 6 (integrador del curso 21/02/25)
-struct Pedido{
-    int id_plato;
-    int cantidad;
-};
 
-struct NodoPed{
-    Pedido info;
-    Nodo* sig;
-};
 
-struct Comandas{
-    int id_pedido;
-    int id_mesa;
-    float importe_total;
-    int id_mozo;
-    NodoPed* lista_pedidos;
-};
 
-struct archivoo{
-    int id_plato;
-    float precio_unitario;
-};
 
-struct nuevo_pedido{
-    int id_mesa;
-    int id_plato;
-    int cantidad;
-};
 
-// void agregar_pedido(NodoPed*& lista, int id_mesa, nuevo_pedido ped[], Comandas com[], archivoo platos[]);
-
-// Ejercicio 7 (de parcial)
-struct archivoDoc{
-    char nombre[60+1];
-    int legajo; // inicia en 500
-    char nombre_actividad[60+1];
-    int edad_tope;
-    int cant_max_ninos;
-    int entorno; // 0 = acuáico, 1 = parque, 2 = interior  
-    char uso_elementos[2+1]; // si/no
-    int fecha; //MMDD
-};
-
-struct tipoActividad{
-    char nombre_actividad[50+1];
-};
-
-struct NodoDocente{
-    tipoActividad info;
-    NodoDocente* sig;
-};
-
-struct vector{
-    char nombre[50+1];
-    int contador = 0;
-    char entorno = 'N';
-    NodoDocente* lista = NULL;
-};
-
-void cargarEstructura(FILE*& f, vector v[]);
-
-// Ejercicio 8
-struct boleta{
-    char nya[25];
-    int num_legajo; // 8 dígitos
-    int cod_materia;
-    int dia_examen;
-    int mes_examen;
-    int año_examen;
-};
-
-struct NodoBoleta{
-    boleta info;
-    NodoBoleta* sig;
-};
-
-NodoBoleta* insertarOrdenado(NodoBoleta*& lista, boleta v);
-void pop(NodoBoleta*& lista);
-void liberar(NodoBoleta*& lista);
-void ingresar_datos(NodoBoleta*& lista);
-void escribir_archivo(NodoBoleta*& lista); */
 
 #endif 

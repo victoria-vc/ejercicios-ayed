@@ -149,7 +149,7 @@ int desencolar(Nodo*& colafte, Nodo*& colafin){
 void agregarNodo(Nodo*& lista, int x){
 	
 	Nodo* nuevo = new Nodo();
-	nuevo->info = x;
+	nuevo->info= x;
 	nuevo->sig = NULL;
 	
 	if(lista == NULL){
@@ -193,7 +193,6 @@ Nodo* buscaEInsertaOrdenado(Nodo*& lista, int v, bool& enc){
 }
 // ----------------------------------------------------------------------------------- //
 
-/*
 // Ejercicio 2 (de parcial)
 void inicializar_comunas(Comuna comunas[], int size){
     for(int i=0; i<size; i++){
@@ -345,86 +344,4 @@ nodo* insertarOrdenado(nodo*& lista, archivo arch){
 	return nuevo;
 }
 
-// Ejercicio 7 (de parcial)
-void cargarEstructura(FILE*& f, vector v[]){
-
-	int indice;
-	archivoDoc arch;
-	tipoActividad act;
-
-	while(fread(&arch, sizeof(archivoDoc), 1, f)){
-		indice = arch.legajo-500;
-		strcpy(v[indice].nombre, arch.nombre);
-		v[indice].contador++;
-		if(arch.entorno == 1){
-			v[indice].entorno = 'S';
-		}
-		strcpy(act.nombre_actividad, arch.nombre_actividad);
-		insertarSinRepetir(v[indice].lista, act); 
-	}
-}
-
-void realizarInforme(vector v[]){
-
-	tipoActividad act;
-
-	for(int i=0; i<35; i++){
-		cout <<"Docente " << i+500 << endl;
-		cout << "sus actividades son: " << endl;
-		while(v[i].lista != NULL){
-			act = pop(v[i].lista);
-			cout << act.nombre_actividad << endl;
-		}
-		cout << "Cantidades de actividades: " << v[i].contador << endl;
-		if(v[i].entorno == 'S'){
-			cout << v[i].nombre << endl;
-		}
-	}
-}
-
-void insertarSinRepetir(NodoDocente*& lista, tipoActividad act){
-	NodoDocente* x = buscar(lista, act);
-	if(x == NULL){
-		insertarOrdenado(lista, act);
-	}
-}
-
-NodoDocente* buscar(NodoDocente* lista, tipoActividad act){
-	NodoDocente* aux = lista;
-	
-	while(aux != NULL && strcmp(aux->info.nombre_actividad, act.nombre_actividad) != 0){
-		aux = aux->sig;		
-	}
-	
-	return aux;
-}
-
-void insertarOrdenado(NodoDocente*& lista, tipoActividad act){
-	NodoDocente* nuevo = new NodoDocente();
-	strcpy(nuevo->info.nombre_actividad, act.nombre_actividad);
-	nuevo->sig = NULL;
-
-	NodoDocente* aux = lista;
-	NodoDocente* ant = NULL;
-	while(aux != NULL && strcmp(aux->info.nombre_actividad, act.nombre_actividad) < 0){
-		ant = aux;
-		aux = aux->sig;
-	}
-	if(ant != NULL){
-		ant->sig = nuevo;
-	} else {
-		lista = nuevo;
-	}
-	nuevo->sig = aux;
-}
-
-tipoActividad pop(NodoDocente*& lista){
-	NodoDocente* aux = lista;
-	tipoActividad info = lista->info;
-	lista = lista->sig;
-	delete aux;
-	return info;
-} */
-
-// Ejercicio 8 (con lista)
 

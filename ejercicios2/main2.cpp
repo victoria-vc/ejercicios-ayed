@@ -2,7 +2,7 @@
 
 int main(){
 
-/* cout << "Ejercicio 1 (comentado): " << endl; 
+cout << "Ejercicio 1 (comentado): " << endl; 
     // Comentado porque no está terminado
 
     /* int i, j, legajo;
@@ -50,9 +50,9 @@ int main(){
             }
         }
     } 
-
-cout << "Ejercicio 2 (de parcial): " << endl;
-
+*/
+cout << "Ejercicio 2 de parcial (comentado): " << endl;
+/*
      Comuna vec[15]; // posición 0 = comuna 1, posición 14 = comuna 15
 
     inicializar_comunas(vec, 15);
@@ -86,9 +86,9 @@ cout << "Ejercicio 2 (de parcial): " << endl;
     while(pila != NULL){
         cout << pop(pila) << endl;
         }
- 
-cout << "Ejercicio 4 (de parcial): " << endl;
-    // se solicita emitir un listado con:
+ */
+cout << "Ejercicio 4 de parcial (comentado): " << endl;
+/*  // se solicita emitir un listado con:
     // mes, cantidad de hora promedio de corte por mes, localidad (nombre),
     // total de horas de corte, unidades de multa
 
@@ -158,11 +158,10 @@ cout << "Ejercicio 4 (de parcial): " << endl;
         cout << "Localidad: " << localidades[i].nombre_localidad << ", Total de horas de cortes: "
         << cantidad_horas_localidad[i] << ", Unidades de multa: " << unidades_multa[i] << endl;
     }
-
-cout << "Ejercicio 5 (de parcial): " << endl;
-
-    FILE* f = NULL;
-    matriz mat[15][31] = {};
+*/
+cout << "Ejercicio 5 de parcial (comentado): " << endl;
+/*   FILE* f = NULL;
+     matriz mat[15][31] = {};
 
     // llenamos de ejemplo:
     archivo ejemplos[] = {
@@ -182,47 +181,7 @@ cout << "Ejercicio 5 (de parcial): " << endl;
     mostrarGastos(mat);
     mayorGasto(mat);
  
-
-cout << "Ejercicio 8: (sin lista) " << endl;
-
-    int cargas;
-
-   cout << "Ingrese la cantidad de cargas" << endl;
-   cin >> cargas;
-   boleta inscripciones[cargas] = {0};
-    
-   FILE* arch = fopen("diafinales.dat", "wb");
-
-   for(int i=0; i<cargas; i++){
-    cout <<"Ingrese legajo: ";
-    cin >> inscripciones[i].num_legajo;
-    cout <<"Ingrese código de materia: ";
-    cin >> inscripciones[i].cod_materia;
-    cout <<"Ingrese día: ";
-    cin >> inscripciones[i].dia_examen;
-    cout <<"Mes: mayo ";
-    inscripciones[i].mes_examen = 5;
-    cout <<"Ingrese año: ";
-    cin >> inscripciones[i].año_examen;
-    cout << "Ingrese nombre y apellido: " << endl;
-    cin.ignore();
-    cin.getline(inscripciones[i].nya, 26);
-    if(strcmp(inscripciones[i].nya, "x") == 0){
-        break;
-    }
-   }
-
-    fwrite(&inscripciones, sizeof(boleta), cargas, arch);
-
-    fclose(arch);
-
-
- */
-
-
-
-
-
+*/
 
 
     return 0;
