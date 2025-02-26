@@ -125,8 +125,22 @@ void mostrarGastos(matriz[][31]);
 nodo* insertarOrdenado(nodo*&, archivo);
 void mayorGasto(matriz mat[][31]);
 
+// Ejercicio 6
+struct Tarea{
+    int id;
+    char nombre[20];
+};
 
+struct SubTarea{
+    Tarea info;
+    SubTarea* sig;
+};
 
+struct NodoTarea{
+    Tarea info;
+    NodoTarea* sig;
+    SubTarea* lista_sub;
+};
 
 
 
