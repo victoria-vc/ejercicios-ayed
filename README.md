@@ -132,12 +132,4 @@ Sector 2
 		...  
 Detalle e importe de cada gasto (ordenado de mayor a menor por importe) agrupado por sector y día.  
 - Función mayorGasto debe mostrar qué sector y qué día se realizó el mayor gasto (suponer único) (3 puntos) 
-6. Crea un programa que gestione una lista de tareas. Cada tarea puede tener subtareas asociadas. El programa debe permitir al usuario realizar las siguientes operaciones:  
-- Añadir una nueva tarea.  
-- Añadir una subtarea a una tarea existente.  
-- Mostrar todas las tareas y sus subtareas.  
-- Salir del programa.  
-Requisitos  
-- Usa una estructura para representar una tarea.
-- Usa una lista (vector) para almacenar las tareas.
-- Cada tarea debe tener un identificador único, un nombre y una lista de subtareas.  
+6. 

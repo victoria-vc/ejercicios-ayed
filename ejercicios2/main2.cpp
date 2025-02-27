@@ -183,6 +183,9 @@ cout << "Ejercicio 5 de parcial (comentado): " << endl;
  
 */
 
+cout << "Ejercicio 6: " << endl;
+
+
 
     return 0;
 
